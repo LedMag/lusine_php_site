@@ -1,0 +1,447 @@
+@charset "utf-8";
+@import url("../webfonts/Ghotic/stylesheet.css");
+/*************************************************** PHONE ***********************************************/
+@media screen and (max-device-width: 375px) 
+ { 
+ 
+.ocultarphone{
+display:none;
+}
+
+}
+/*************************************************** TABLET ***********************************************/
+@media only screen 
+  and (min-width: 376px) 
+  and (max-width: 812px) 
+
+ { 
+ 
+.ocultarphone{
+display:none;
+}
+
+}
+
+/*********************************************** PC ******************************************************************/
+
+
+
+
+@media screen and (min-width: 800px) { 
+
+.ocultarpc{
+		display: none;
+	}
+}
+
+
+
+/*********************************************** PC ******************************************************************/
+
+
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+.espaciowebproducto {
+	width: 80%;
+	margin-left: 30%;
+	Webkit-border-radius: 5px;
+	border-radius: 10px;
+	background-color: #FFF;
+	Webkit-box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 1);
+	box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 1);
+}
+
+.espaciowebproductophone {
+	width: 98%;
+	margin-left: 1%;
+	Webkit-border-radius: 5px;
+	border-radius: 10px;
+	background-color: #FFF;
+	Webkit-box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 1);
+	box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 1);
+}
+
+
+.botoncategoriapack002 {
+	float: left;
+	width: 6%;
+	border: 0px solid #B7C8CC;
+
+}
+.texto{
+	font-family: Ghotic;	
+	
+	}
+.registro {
+	font-family: Ghotic;
+	padding-left: 0.5%;
+}
+.imagencategoriapack002 {
+	width: 92%;
+	text-align: center;
+	padding: 1%;
+	} 
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+.general {
+	width: 100%;
+	z-index: 1;
+	margin-top: 1%;
+}
+.espacioweb {
+	width: 92%;
+	margin-left: 4%;
+	Webkit-border-radius: 10px;
+	border-radius: 20px;
+	background-color: #FFF;
+	Webkit-box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 1);
+	box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 1);
+	font-family: Ghotic;
+}
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+.anagrama {
+	opacity:0.5;
+	}
+	
+.menuidioma {
+	font-family: Ghotic;
+	font-size: 125%;
+	line-height: 165%;
+}
+.menuidioma a:link {
+	text-decoration: none;
+	color: #666;
+}
+.menuidioma a:visited {
+	text-decoration: none;
+	color: #666;
+}
+.menuidioma a:hover {
+	text-decoration: none;
+	color: #A7D1CC;
+
+	}
+
+.menuidioma a:active {
+	text-decoration: none;
+	color: #666;
+}
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+.menuhorizontal0001 {
+	background-color: #B7C8CC;
+	padding-top: 0.3%;
+	text-align: right;
+	width: 100%;
+	font-family: Ghotic;
+	padding-bottom: 0.3%;
+	opacity:0.8;
+}
+.menuhorizontal0001 a:link {
+	text-decoration: none;
+	color: #000000;
+}
+.menuhorizontal0001 a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+.menuhorizontal0001 a:hover {
+	text-decoration: none;
+	color: #fff;
+
+	}
+
+.menuhorizontal0001 a:active {
+	text-decoration: none;
+	color: #000000;
+}	
+/***************************************************************************************	*/
+/***************************************************************************************	*/	
+.menuhorizontal0002 {
+	background-color: #CCCCCC;
+	padding-top: 0.3%;
+	text-align: right;
+	width: 100%;
+	font-family: Ghotic;
+	padding-bottom: 0.3%;
+}
+.menuhorizontal0002 a:link {
+	text-decoration: none;
+	color: #000000;
+}
+.menuhorizontal0002 a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+.menuhorizontal0002 a:hover {
+	text-decoration: none;
+	color: #fff;
+
+	}
+
+.menuhorizontal0002 a:active {
+	text-decoration: none;
+	color: #000000;
+}	
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+.gotico {
+	font-family: Ghotic;
+	padding-top: 0.3%;
+	padding-right: 0.5%;
+	padding-bottom: 0.3%;
+	padding-left: 0.5%;
+	font-size: small;
+}
+.goticomini {
+	font-family: Ghotic;
+	padding-top: 0.5%;
+	padding-right: 0.5%;
+	padding-bottom: 0.5%;
+	padding-left: 0.5%;
+	font-size: 75%;
+	opacity: 0.5;
+}
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+.goticodos {
+	font-family: Ghotic;
+	opacity: 0.4;
+	font-size: small;
+}
+.goticodos a:link {
+	text-decoration: none;
+	color: #000000;
+}
+.goticodos a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+.goticodos a:hover {
+	text-decoration: none;
+	color: #B7C8CC;
+}
+.goticodos a:active {
+	text-decoration: none;
+	color: #000000;
+}
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+.separadoruno {
+	background-color: #333;
+	height: 1px;
+	opacity: 0.07;
+}
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+.iconosweb {
+	font-family: Ghotic;
+	opacity: 0.7;
+	text-align: center;
+}
+
+.comparte {
+	position: absolute;
+	margin-top: -30%;
+	z-index: 5000;
+	width: 90%;
+	margin-left: 1.5%;
+}
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+.totalcategoriapack001 {
+	overflow: hidden;
+	text-align: center;/*	background-image: url(../gif/fondos/cat.jpg);
+	background-repeat: repeat-x;*/
+}
+.botoncategoriapack001 {
+	float: left;
+	width: 15.95%;
+	Webkit-border-radius: 5px;
+	border-radius: 10px;
+	border: 1px solid #B7C8CC;
+	background-color: #FFF;
+	margin: 0.190%;
+}
+.imagencategoriapack001 {
+	width: 92%;
+	text-align: center;
+	padding: 4%;
+	}
+.nombrecategoriapack001 {
+	background-color: #B7C8CC;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	font-family: Ghotic;
+}	
+.botonsub {
+	position: relative;
+	margin-top: -100%;
+	font-size: small;
+}
+.referencianov {
+	position: absolute;
+	margin-top: -14%;
+	font-family: Ghotic;
+	opacity: 0.7;
+	color: #B7C8CC;
+	}
+/***************************************************************************************	*/
+/***************************************************************************************	*/	
+.totalcategoriapack001phone {
+	overflow: hidden;
+	text-align: center;
+}
+.botoncategoriapack001phone {
+	float: left;
+	Webkit-border-radius: 5px;
+	border-radius: 10px;
+	border: 1px solid #B7C8CC;
+	background-color: #FFF;
+	margin: 0.190%;
+}
+.imagencategoriapack001phone {
+	width: 92%;
+	text-align: center;
+	padding: 4%;
+	}
+.nombrecategoriapack001phone {
+	background-color: #B7C8CC;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	font-family: Ghotic;
+}	
+.botonsubphone {
+	position: relative;
+	margin-top: -100%;
+	font-size: small;
+}
+.referencianovphone {
+	position: absolute;
+	margin-top: -14%;
+	font-family: Ghotic;
+	opacity: 0.7;
+	color: #B7C8CC;
+	}
+	
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+.totalcategoriapack002 {
+	overflow: hidden;
+/*	background-image: url(../gif/fondos/cat.jpg);
+	background-repeat: repeat-x;*/
+}
+.botoncategoriapack002 {
+	float: left;
+	width: 11.70%;
+	Webkit-border-radius: 5px;
+	border-radius: 10px;
+	border: 1px solid #B7C8CC;
+	background-color: #FFF;
+	margin: 0.190%;
+}
+.imagencategoriapack002 {
+	width: 92%;
+	text-align: center;
+	padding: 4%;
+	}
+.nombrecategoriapack002 {
+	background-color: #B7C8CC;
+	margin-top: 3%;
+	margin-bottom: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	font-family: Ghotic;
+}	
+.botonsub002 {
+	position: relative;
+	margin-top: -100%;
+}
+.referencianov002 {
+	position: absolute;
+	margin-top: -10%;
+	font-family: Ghotic;
+	opacity: 0.7;
+	color: #333333;
+	}	
+	
+.referencianov003 {
+	position: absolute;
+	margin-top: -13.5%;
+	font-family: Ghotic;
+	opacity: 0.7;
+	color: #666666;
+	}	
+	
+.espaciowebproducto {
+	width: 40%;
+	margin-left: 30%;
+	Webkit-border-radius: 10px;
+	border-radius: 20px;
+	background-color: #FFF;
+	Webkit-box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 1);
+	box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 1);
+}
+.refartic {
+	position: absolute;
+	left: 64.30%;
+	top: 12%;
+	font-family: Ghotic;
+	opacity: 0.3;
+	text-align: right;
+}
+.compartefoto {
+	position: absolute;
+	z-index: 5000;
+
+	width: 79%;
+	margin-top: -77%;
+}	
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+.registro {
+	font-family: Ghotic;
+	padding-left: 0.5%;
+}
+#fechahoy {
+	font-family: Ghotic;
+	opacity: 0.2;
+	text-align: center;
+	width: 97%;
+	margin-right: 1.5%;
+}
+
+.slider {
+	overflow: hidden;
+}
+
+body {
+	background-image: url(../gif/fondos/little_pluses2.png);
+}
+.nombrenovedad {
+	font-size: small;
+}
+.slogan01 {
+	font-family: Ghotic;
+	font-size: 125%;
+	opacity:0.6;
+}
+.botonescontrol {
+	position: absolute;
+	width: 56%;
+	top: 85px;
+	margin-left: 21%;
+}
+.articulo {
+	visibility: visible;
+	z-index: 2000;
+}

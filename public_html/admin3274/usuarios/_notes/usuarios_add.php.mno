@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_usuarios" value="name:idUsuario;datatype:int,name:strNombre;datatype:string,name:strPassword;datatype:string,name:strLevel;datatype:string" />
+	<infoitem key="UD_favicon" value="name:idFavicon;datatype:int,name:strFavicon;datatype:string,name:strEnlace;datatype:string" />
+	<infoitem key="UD_anagrama" value="name:idAnagrama;datatype:int,name:strImagen;datatype:blob,name:strImagen2;datatype:blob,name:strImagenEs;datatype:blob,name:strImagenEn;datatype:blob,name:strImagenRu;datatype:blob,name:strImagenFr;datatype:blob,name:strImagenIt;datatype:blob,name:strImagenLogin;datatype:blob,name:strIcono1;datatype:blob,name:strIcono2;datatype:blob,name:strIcono3;datatype:blob,name:strIcono4;datatype:blob,name:strIcono5;datatype:blob" />
+</info>

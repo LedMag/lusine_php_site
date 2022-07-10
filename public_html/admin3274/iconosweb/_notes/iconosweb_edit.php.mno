@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_favicon" value="name:idFavicon;datatype:int,name:strFavicon;datatype:string,name:strEnlace;datatype:string" />
+	<infoitem key="UD_anagrama" value="name:idAnagrama;datatype:int,name:strImagen;datatype:blob,name:strImagen2;datatype:blob,name:strImagenLogin;datatype:blob,name:strIcono1;datatype:blob" />
+	<infoitem key="UD_usuario" value="name:idUsuario;datatype:int,name:strNombre;datatype:string,name:strPassword;datatype:string,name:strLevel;datatype:string,name:strNameUsuario;datatype:blob" />
+	<infoitem key="UD_iconosweb" value="name:idIconos;datatype:int,name:strNombre;datatype:blob,name:strImagen;datatype:blob,name:strImagen2;datatype:blob,name:strEnlace1;datatype:blob,name:strEnlace2;datatype:blob,name:strExterno;datatype:blob,name:strPosicion;datatype:int,name:strActivacion;datatype:blob" />
+	<infoitem key="UD_contacto" value="name:idDatosEmpresa;datatype:int,name:strEmpresa;datatype:blob,name:strCif;datatype:string,name:strDireccion;datatype:blob,name:strPoblacion;datatype:blob,name:strCodigo;datatype:int,name:strProvincia;datatype:string,name:strPais;datatype:string,name:strDominio;datatype:blob,name:strEmail;datatype:blob,name:strTelefono;datatype:string" />
+</info>

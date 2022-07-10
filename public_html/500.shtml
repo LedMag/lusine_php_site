@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>500 Internal Server Error</TITLE>
+<style type="text/css">
+#general {
+	position: absolute;
+	width: 1000px;
+	height: 500px;
+	z-index: 1;
+	left: 0px;
+	top: 0px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+#dentro {
+	position: absolute;
+	width: 800px;
+	height: 152px;
+	z-index: 1;
+	left: 127px;
+	top: 10px;
+}
+#imagen {
+	position: absolute;
+	width: 110px;
+	height: 110px;
+	z-index: 2;
+	left: 13px;
+	top: 9px;
+}
+#direc {
+	position: absolute;
+	width: 800px;
+	height: 123px;
+	z-index: 3;
+	left: 127px;
+	top: 163px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+}
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {
+	text-decoration: none;
+	color: #999;
+}
+a:active {
+	text-decoration: none;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+<div id="general">
+  <div id="dentro">
+  <H1>Internal Server Error</H1> 
+  El servidor encontro un error interno y no pudo completar su solicitud.
+  <HR>
+<I><!--#echo var="HTTP_HOST" --></I>
+  </div>
+  <div id="imagen"><img src="error.png" alt="carlos carrasco andreu" width="110" height="111"></div>
+  <div id="direc">&lt; Vuelva a intentarlo más tarde. <a href="index.php">http://www.abanicosluciegabrielle.com</a></div>
+</div>
+
+
+</BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

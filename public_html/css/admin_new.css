@@ -1,0 +1,277 @@
+@charset "utf-8";
+@import url("../webfonts/Ghotic/stylesheet.css");
+
+@media screen and (max-device-width: 480px) {
+#general {
+	width: 100%;
+	z-index: 1;
+	font-family: Ghotic;
+	font-size: 11px;
+	padding-top: 5%;
+}
+}
+
+@media screen and (max-device-width: 800px) {
+#general {
+	width: 100%;
+	z-index: 1;
+	font-family: Ghotic;
+	font-size: 11px;
+	padding-top: 5%;
+}
+}
+
+/***************************************************************************************	*/
+/***************************************************************************************	*/
+img {border:none;}
+#general {
+	z-index: 1;
+	width: 100%;
+	margin-top: 2%;
+	}
+.espacioweb {
+	width: 88%;
+	Webkit-border-radius: 10px;
+	border-radius: 20px;
+	background-color: #FFF;
+	margin-left: 6%;
+	}
+	
+.editar {
+	color: #000;
+}
+.editar a:link {text-decoration: none; color: #000;}
+.editar a:visited {text-decoration: none; color: #000;}
+.editar a:hover {
+	text-decoration: none;
+	color: #8a9a9f;
+
+}
+
+.editar a:active {text-decoration: none; color: #000;}
+
+
+
+.eliminad {
+		color: #000;
+	}
+.eliminad a:link {text-decoration: none; color: #000;}
+.eliminad a:visited {text-decoration: none; color: #000;}
+.eliminad a:hover {
+	text-decoration: none;
+	color:#8a9a9f;	
+}
+
+.eliminad a:active {text-decoration: none; color: #000;}
+
+.contenidouno {
+	width: 98%;
+	font-family: Ghotic;
+	background-color: #F2F2F2;
+	margin-left: 0.5%;
+	padding: 0.5%;
+}
+.separadoradminew {
+	background-color: #F2F2F2;
+	height: 1px;
+}
+.tablacategorias {
+	font-family: Ghotic;
+}
+.tipografiagothicmin {
+	font-family: Ghotic;
+	font-size: 80%;
+	text-align: center;
+}
+.tipografiagothic {
+	font-family: Ghotic;
+	font-size: 100%;
+}
+.tipografiagothic a:link {text-decoration: none; color: #000;}
+.tipografiagothic a:visited {text-decoration: none; color: #000;}
+.tipografiagothic a:hover {
+	text-decoration: none;
+	color:#C00;
+	
+}
+.tipografiagothic a:active {text-decoration: none; color: #000;}
+
+.tipografiagothicgra{
+	font-family: Ghotic;
+	font-size: 200%;
+	text-align: right;
+}
+
+.tipografiagothicgra1{
+	font-family: Ghotic;
+	font-size: 200%;
+}
+
+
+.tipografiagothicdcha {
+	font-family: Ghotic;
+	font-size: 100%;
+	text-align: right;
+	padding-right: 1%;
+}
+.tipografiagothicdcha a:link {text-decoration: none; color: #000;}
+.tipografiagothicdcha a:visited {text-decoration: none; color: #000;}
+.tipografiagothicdcha a:hover {
+	text-decoration: none;
+	color:#C00;	
+}
+.tipografiagothicdcha a:active {text-decoration: none; color: #000;}	
+.formularios {
+	font-family: Ghotic;
+	font-size: 100%;
+	width: 96%;
+	margin-left: 2%;
+}
+.menuhorizontal {
+	font-family: Ghotic;
+	font-size: 105%;
+	background-color: #b7c8cc;
+	padding-top: 0.6%;
+	padding-bottom: 0.8%;
+}
+.a1normal {
+	width: 95%;
+	font-family: Ghotic;
+	font-size: 100%;
+}
+.a1extranormal {
+	width: 100%;
+	font-family: Ghotic;
+	font-size: 100%;
+}
+.a1medio {
+	width: 55%;
+	font-family: Ghotic;
+	font-size: 100%;
+}
+.a1mini {
+	width: 10%;
+	font-family: Ghotic;
+	font-size: 100%;
+}
+.a1boton {
+	font-family: Ghotic;
+	font-size: 100%;
+}
+.a1textoboton {
+	width: 15%;
+	font-family: Ghotic;
+	font-size: 100%;
+}
+.usuariose {
+	font-family: Ghotic;
+	font-size: 98%;
+	padding-right: 2%;
+	color: #8a9a9f;
+	letter-spacing: 0.1em;
+	opacity:0.5;
+}
+.separadoradmin3 {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #E1E1E1;
+
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #E1E1E1;
+}
+.separadoradmin4 {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #E1E1E1;
+
+}
+.separadoradmin5 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #E1E1E1;
+}
+.menuprincipaltitulo {
+	font-family: Santanita;
+	font-size: 3em;
+	margin-left: 4%;
+	margin-top: 2%;
+}
+.menuprincipaltitulo a:link {
+	text-decoration: none;
+	color: #000000;
+	opacity:0.6;
+}
+.menuprincipaltitulo a:visited {
+	text-decoration: none;
+	color: #000000;
+	opacity:0.6;
+}
+.menuprincipaltitulo a:hover {
+	text-decoration: none;
+	color: #b7c8cc;
+}
+.menuprincipaltitulo a:active {
+	text-decoration: none;
+	color: #000000;
+	opacity:0.6;
+}
+.menuprincipal {
+	font-family: Ghotic;
+	font-size: 1em;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+	padding-left: 4%;
+	line-height: 150%;
+}
+.menuprincipal a:link {
+	text-decoration: none;
+	color: #000000;
+	opacity:0.6;
+}
+.menuprincipal a:visited {
+	text-decoration: none;
+	color: #000000;
+	opacity:0.6;
+}
+.menuprincipal a:hover {
+	text-decoration: none;
+	color: #b7c8cc;
+
+	}
+.menuprincipal a:active {
+	text-decoration: none;
+	color: #000000;
+	opacity:0.6;
+}
+.separadorarlineas {
+	background-color: #CCC;
+	height: 1px;
+	margin-top: 0.5%;
+	margin-bottom: 0.5%;
+}
+.totalpack004 {
+	overflow: hidden;
+	padding-left: 1%;
+}
+.paquetepack004 {
+	float: left;
+	width: 13.8%;
+	padding-bottom: 1%;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+.bordertablainferior {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #b7c8cc;
+}
+.rojo {
+	color: #C33;
+}
+.diferencial {
+	color: #999;
+	opacity:0.5;
+}
+
+

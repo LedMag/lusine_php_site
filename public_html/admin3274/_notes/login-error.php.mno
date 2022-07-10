@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_favicon" value="name:idFavicon;datatype:int,name:strFavicon;datatype:string,name:strEnlace;datatype:string" />
+	<infoitem key="UD_anagrama" value="name:idAnagrama;datatype:int,name:strImagen;datatype:blob,name:strImagen2;datatype:blob,name:strImagenLogin;datatype:blob,name:strIcono1;datatype:blob" />
+</info>

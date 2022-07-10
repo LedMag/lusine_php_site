@@ -1,0 +1,6 @@
+@font-face {
+	font-family: 'Ghotic';
+	src: url('GOTHIC.eot');
+	src: url('GOTHIC.eot?#iefix') format('embedded-opentype'),
+		url('GOTHIC.ttf') format('truetype');
+}

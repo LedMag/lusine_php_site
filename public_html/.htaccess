@@ -1,0 +1,43 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^carloscarrascoandreu.net
+RewriteRule ^ http://www.carloscarrascoandreu.net%{REQUEST_URI} [L,R=301]
+
+#***************************************************************************************************
+#***************************************************************************************************
+#***************************************************************************************************
+RewriteRule ^bienvenido.html$    							index.php
+RewriteRule ^es/bienvenido.html$    						es/index.php
+RewriteRule ^es/coleccion.html$    							es/coleccion.php
+RewriteRule ^es/coleccion-completa.html$    				es/coleccion-completa.php
+#***************************************************************************************************
+#***************************************************************************************************
+#***************************************************************************************************
+#RewriteRule ^en/welcome.html$	    						en/index.php
+#RewriteRule ^en/collection.html$    						en/coleccion.php
+#RewriteRule ^en/article.html$    							en/articulo.php
+#RewriteRule ^en/see-article-sheet.html$    				en/ver-articulo.php
+#RewriteRule ^en/coleccion-completa.html$    				en/coleccion-completa.php
+
+
+
+
+
+RewriteRule ^en/welcome.html$	    						en/index.php
+RewriteRule ^en/bienvenido.html$    						en/index.php
+RewriteRule ^en/coleccion.html$    							en/coleccion.php
+RewriteRule ^en/coleccion-completa.html$    				en/coleccion-completa.php
+#***************************************************************************************************
+#***************************************************************************************************
+#***************************************************************************************************
+#RewriteRule ^ru/добро-пожаловать.html$	    				ru/index.php
+#RewriteRule ^ru/коллекция.html$	    					ru/coleccion.php
+#RewriteRule ^ru/статья.html$	    						ru/articulo.php
+#RewriteRule ^ru/см-статьи.html$	    						ru/ver-articulo.php
+#RewriteRule ^ru/coleccion-completa.html$    				ru/coleccion-completa.php
+
+RewriteRule ^ru/добро-пожаловать.html$	    				ru/index.php
+RewriteRule ^ru/bienvenido.html$    						ru/index.php
+RewriteRule ^ru/coleccion.html$    							ru/coleccion.php
+RewriteRule ^ru/coleccion-completa.html$    				ru/coleccion-completa.php
+
