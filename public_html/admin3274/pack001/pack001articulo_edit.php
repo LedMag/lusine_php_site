@@ -1,5 +1,5 @@
 <?php require_once('../../Connections/gabrielle.php'); ?>
-<?php mysql_query("SET NAMES 'utf8'");?>
+ 
 <?php
 if (!isset($_SESSION)) {
   session_start();
@@ -53,7 +53,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -106,8 +106,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form2")) {
                        GetSQLValueString($_POST['strActiva'], "text"),
                        GetSQLValueString($_POST['idSubCategoria'], "int"));
 
-  mysql_select_db($database_gabrielle, $gabrielle);
-  $Result1 = mysql_query($updateSQL, $gabrielle) or die(mysql_error());
+   mysqli_select_db($database_gabrielle, $gabrielle);
+  $Result1 =  mysqli_query($updateSQL, $gabrielle) or die( mysqli_error());
 
   $updateGoTo = "pack001articulo_lista.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -157,8 +157,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 						GetSQLValueString($_POST['strNovedad'], "text"),
                        	GetSQLValueString($_POST['idArticulo'], "int"));
 
-  mysql_select_db($database_gabrielle, $gabrielle);
-  $Result1 = mysql_query($updateSQL, $gabrielle) or die(mysql_error());
+   mysqli_select_db($database_gabrielle, $gabrielle);
+  $Result1 =  mysqli_query($updateSQL, $gabrielle) or die( mysqli_error());
 
   $updateGoTo = "pack001articulo_lista.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -168,45 +168,45 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
   header(sprintf("Location: %s", $updateGoTo));
 }
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_usuarios = "SELECT * FROM tblusuario ORDER BY tblusuario.strLevel DESC";
-$usuarios = mysql_query($query_usuarios, $gabrielle) or die(mysql_error());
-$row_usuarios = mysql_fetch_assoc($usuarios);
-$totalRows_usuarios = mysql_num_rows($usuarios);
+$usuarios =  mysqli_query($query_usuarios, $gabrielle) or die( mysqli_error());
+$row_usuarios =  mysqli_fetch_assoc($usuarios);
+$totalRows_usuarios =  mysqli_num_rows($usuarios);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon = mysql_query($query_favicon, $gabrielle) or die(mysql_error());
-$row_favicon = mysql_fetch_assoc($favicon);
-$totalRows_favicon = mysql_num_rows($favicon);
+$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$row_favicon =  mysqli_fetch_assoc($favicon);
+$totalRows_favicon =  mysqli_num_rows($favicon);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama = mysql_query($query_anagrama, $gabrielle) or die(mysql_error());
-$row_anagrama = mysql_fetch_assoc($anagrama);
-$totalRows_anagrama = mysql_num_rows($anagrama);
+$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$row_anagrama =  mysqli_fetch_assoc($anagrama);
+$totalRows_anagrama =  mysqli_num_rows($anagrama);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_pack001subcategoria = "SELECT * FROM tblpack001subcategoria WHERE strNombre != 'CATÁLOGO COMPLETO' ORDER BY tblpack001subcategoria.strPosicion ASC";
-$pack001subcategoria = mysql_query($query_pack001subcategoria, $gabrielle) or die(mysql_error());
-$row_pack001subcategoria = mysql_fetch_assoc($pack001subcategoria);
-$totalRows_pack001subcategoria = mysql_num_rows($pack001subcategoria);
+$pack001subcategoria =  mysqli_query($query_pack001subcategoria, $gabrielle) or die( mysqli_error());
+$row_pack001subcategoria =  mysqli_fetch_assoc($pack001subcategoria);
+$totalRows_pack001subcategoria =  mysqli_num_rows($pack001subcategoria);
 
 $varArticulo_pack001articulo = "0";
 if (isset($_GET ["recordID"])) {
   $varArticulo_pack001articulo = $_GET ["recordID"];
 }
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_pack001articulo = sprintf("SELECT * FROM tblpack001articulo WHERE tblpack001articulo.idArticulo =%s", GetSQLValueString($varArticulo_pack001articulo, "int"));
-$pack001articulo = mysql_query($query_pack001articulo, $gabrielle) or die(mysql_error());
-$row_pack001articulo = mysql_fetch_assoc($pack001articulo);
-$totalRows_pack001articulo = mysql_num_rows($pack001articulo);
+$pack001articulo =  mysqli_query($query_pack001articulo, $gabrielle) or die( mysqli_error());
+$row_pack001articulo =  mysqli_fetch_assoc($pack001articulo);
+$totalRows_pack001articulo =  mysqli_num_rows($pack001articulo);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_categoria = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.idCategoria ASC";
-$categoria = mysql_query($query_categoria, $gabrielle) or die(mysql_error());
-$row_categoria = mysql_fetch_assoc($categoria);
-$totalRows_categoria = mysql_num_rows($categoria);
+$categoria =  mysqli_query($query_categoria, $gabrielle) or die( mysqli_error());
+$row_categoria =  mysqli_fetch_assoc($categoria);
+$totalRows_categoria =  mysqli_num_rows($categoria);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/adminewv3.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -224,16 +224,16 @@ $totalRows_categoria = mysql_num_rows($categoria);
 {
 
 	global $database_gabrielle, $gabrielle;
-	mysql_select_db($database_gabrielle, $gabrielle);
+	 mysqli_select_db($database_gabrielle, $gabrielle);
 	$query_ConsultaFuncion = sprintf("SELECT strNombre FROM tblpack001categoria WHERE idSubCategoria = %s", $identificador);
-	$ConsultaFuncion = mysql_query($query_ConsultaFuncion, $gabrielle) or die(mysql_error());
-	$row_ConsultaFuncion = mysql_fetch_assoc($ConsultaFuncion);
-	$totalRows_ConsultaFuncion = mysql_num_rows($ConsultaFuncion);
+	$ConsultaFuncion =  mysqli_query($query_ConsultaFuncion, $gabrielle) or die( mysqli_error());
+	$row_ConsultaFuncion =  mysqli_fetch_assoc($ConsultaFuncion);
+	$totalRows_ConsultaFuncion =  mysqli_num_rows($ConsultaFuncion);
 
 
 	
 	return $row_ConsultaFuncion['strNombre']; 
-	mysql_free_result($ConsultaFuncion);
+	 mysqli_free_result($ConsultaFuncion);
 
 }?>-->
 <!--****************************************************************************************************************--><!--****************************************************************************************************************-->
@@ -426,11 +426,11 @@ do {
 ?>
     <option value="<?php echo $row_categoria['idCategoria']?>"<?php if (!(strcmp($row_categoria['idCategoria'], $row_pack001articulo['intCat']))) {echo "selected=\"selected\"";} ?>><?php echo $row_categoria['strNombre']?></option>
     <?php
-} while ($row_categoria = mysql_fetch_assoc($categoria));
-  $rows = mysql_num_rows($categoria);
+} while ($row_categoria =  mysqli_fetch_assoc($categoria));
+  $rows =  mysqli_num_rows($categoria);
   if($rows > 0) {
-      mysql_data_seek($categoria, 0);
-	  $row_categoria = mysql_fetch_assoc($categoria);
+       mysqli_data_seek($categoria, 0);
+	  $row_categoria =  mysqli_fetch_assoc($categoria);
   }
 ?>
   </select>
@@ -451,7 +451,7 @@ do {
 ?>
   <option value="<?php echo $row_pack001subcategoria['idSubCategoria']?>" <?php if (!(strcmp($row_pack001subcategoria['idSubCategoria'], htmlentities($row_pack001articulo['intSubCategoria'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>><?php echo $row_pack001subcategoria['strNombre']?></option>
   <?php
-} while ($row_pack001subcategoria = mysql_fetch_assoc($pack001subcategoria));
+} while ($row_pack001subcategoria =  mysqli_fetch_assoc($pack001subcategoria));
 ?>
   </select>
   </td>
@@ -688,15 +688,15 @@ do {
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($usuarios);
+ mysqli_free_result($usuarios);
 
-mysql_free_result($favicon);
+ mysqli_free_result($favicon);
 
-mysql_free_result($anagrama);
+ mysqli_free_result($anagrama);
 
-mysql_free_result($pack001subcategoria);
+ mysqli_free_result($pack001subcategoria);
 
-mysql_free_result($pack001articulo);
+ mysqli_free_result($pack001articulo);
 
-mysql_free_result($categoria);
+ mysqli_free_result($categoria);
 ?>

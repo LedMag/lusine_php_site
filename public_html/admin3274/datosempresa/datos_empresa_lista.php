@@ -1,5 +1,5 @@
 <?php require_once('../../Connections/gabrielle.php'); ?>
-<?php mysql_query("SET NAMES 'utf8'");?>
+ 
 <?php
 if (!isset($_SESSION)) {
   session_start();
@@ -53,7 +53,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -77,31 +77,31 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon = mysql_query($query_favicon, $gabrielle) or die(mysql_error());
-$row_favicon = mysql_fetch_assoc($favicon);
-$totalRows_favicon = mysql_num_rows($favicon);
+$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$row_favicon =  mysqli_fetch_assoc($favicon);
+$totalRows_favicon =  mysqli_num_rows($favicon);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama = mysql_query($query_anagrama, $gabrielle) or die(mysql_error());
-$row_anagrama = mysql_fetch_assoc($anagrama);
-$totalRows_anagrama = mysql_num_rows($anagrama);
+$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$row_anagrama =  mysqli_fetch_assoc($anagrama);
+$totalRows_anagrama =  mysqli_num_rows($anagrama);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_datos = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$datos = mysql_query($query_datos, $gabrielle) or die(mysql_error());
-$row_datos = mysql_fetch_assoc($datos);
-$totalRows_datos = mysql_num_rows($datos);
+$datos =  mysqli_query($query_datos, $gabrielle) or die( mysqli_error());
+$row_datos =  mysqli_fetch_assoc($datos);
+$totalRows_datos =  mysqli_num_rows($datos);
 
 $usuarioadmin = $_SESSION['MM_Username'];
 $url= $_SERVER['REQUEST_URI'];
 
 
-mysql_select_db($database_gabrielle, $gabrielle); 
+ mysqli_select_db($database_gabrielle, $gabrielle); 
 $query_registro = "INSERT INTO tblregistro(strFecha, strUsuario, strContenido) VALUES (NOW(), '$usuarioadmin', '$url')";
-$registro = mysql_query($query_registro, $gabrielle) or die(mysql_error());
+$registro =  mysqli_query($query_registro, $gabrielle) or die( mysqli_error());
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/adminewv3.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -275,9 +275,9 @@ $registro = mysql_query($query_registro, $gabrielle) or die(mysql_error());
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($favicon);
+ mysqli_free_result($favicon);
 
-mysql_free_result($anagrama);
+ mysqli_free_result($anagrama);
 
-mysql_free_result($datos);
+ mysqli_free_result($datos);
 ?>

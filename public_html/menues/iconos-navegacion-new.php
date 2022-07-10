@@ -31,7 +31,7 @@ $url= $_SERVER['REQUEST_URI'];
 <?php if ($row_iconosweb['strActivacion'] == "si") { // Show if recordset not empty ?>
 <a href="<?php echo $row_iconosweb['strEnlace1']; ?>" onmouseout="MM_swapImgRestore()" title="<?php echo $row_iconosweb['strNombre']; ?>" onmouseover="MM_swapImage('botonweb<?php echo $row_iconosweb['idIconos']; ?>','','admin3274/iconosweb/img/<?php echo $row_iconosweb['strImagen2']; ?>',1)" <?php echo $row_iconosweb['strExterno']; ?>><img src="admin3274/iconosweb/img/<?php echo $row_iconosweb['strImagen']; ?>" width="10%" id="botonweb<?php echo $row_iconosweb['idIconos']; ?>" /></a>
 <?php } // Show if recordset not empty ?>
-<?php } while ($row_iconosweb = mysql_fetch_assoc($iconosweb)); ?>
+<?php } while ($row_iconosweb =  mysqli_fetch_assoc($iconosweb)); ?>
 
 
 
@@ -56,7 +56,7 @@ $url= $_SERVER['REQUEST_URI'];
 <?php if ($row_iconosweb['strActivacion'] == "si") { // Show if recordset not empty ?>
 <a href="<?php echo $row_iconosweb['strEnlace2']; ?>" onmouseout="MM_swapImgRestore()" title="<?php echo $row_iconosweb['strNombre']; ?>" onmouseover="MM_swapImage('botonweb<?php echo $row_iconosweb['idIconos']; ?>','','../admin3274/iconosweb/img/<?php echo $row_iconosweb['strImagen2']; ?>',1)" <?php echo $row_iconosweb['strExterno']; ?>><img src="../admin3274/iconosweb/img/<?php echo $row_iconosweb['strImagen']; ?>" width="10%" id="botonweb<?php echo $row_iconosweb['idIconos']; ?>" /></a>
 <?php } // Show if recordset not empty ?>
-<?php } while ($row_iconosweb = mysql_fetch_assoc($iconosweb)); ?>
+<?php } while ($row_iconosweb =  mysqli_fetch_assoc($iconosweb)); ?>
 
 
 
@@ -82,7 +82,7 @@ $url= $_SERVER['REQUEST_URI'];
 <?php if ($row_iconosweb['strActivacion'] == "si") { // Show if recordset not empty ?>
 <a href="<?php echo $row_iconosweb['strEnlace2']; ?>" onmouseout="MM_swapImgRestore()" title="<?php echo $row_iconosweb['strNombreEn']; ?>" onmouseover="MM_swapImage('botonweb<?php echo $row_iconosweb['idIconos']; ?>','','../admin3274/iconosweb/img/<?php echo $row_iconosweb['strImagen2']; ?>',1)" <?php echo $row_iconosweb['strExterno']; ?>><img src="../admin3274/iconosweb/img/<?php echo $row_iconosweb['strImagen']; ?>" width="10%" id="botonweb<?php echo $row_iconosweb['idIconos']; ?>" /></a>
 <?php } // Show if recordset not empty ?>
-<?php } while ($row_iconosweb = mysql_fetch_assoc($iconosweb)); ?>
+<?php } while ($row_iconosweb =  mysqli_fetch_assoc($iconosweb)); ?>
 
 
 
@@ -107,7 +107,7 @@ $url= $_SERVER['REQUEST_URI'];
 <?php if ($row_iconosweb['strActivacion'] == "si") { // Show if recordset not empty ?>
 <a href="<?php echo $row_iconosweb['strEnlace4']; ?>" onmouseout="MM_swapImgRestore()" title="<?php echo $row_iconosweb['strNombreRu']; ?>" onmouseover="MM_swapImage('botonweb<?php echo $row_iconosweb['idIconos']; ?>','','../admin3274/iconosweb/img/<?php echo $row_iconosweb['strImagen2']; ?>',1)" <?php echo $row_iconosweb['strExterno']; ?>><img src="../admin3274/iconosweb/img/<?php echo $row_iconosweb['strImagen']; ?>" width="10%" id="botonweb<?php echo $row_iconosweb['idIconos']; ?>" /></a>
 <?php } // Show if recordset not empty ?>
-<?php } while ($row_iconosweb = mysql_fetch_assoc($iconosweb)); ?>
+<?php } while ($row_iconosweb =  mysqli_fetch_assoc($iconosweb)); ?>
 
 
 

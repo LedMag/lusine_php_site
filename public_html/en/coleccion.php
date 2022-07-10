@@ -1,5 +1,5 @@
 <?php require_once('../Connections/gabrielle.php'); ?>
-<?php mysql_query("SET NAMES 'utf8'");?>
+ 
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -8,7 +8,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -34,53 +34,53 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_textoaweb = "SELECT * FROM tbltextoweb ORDER BY tbltextoweb.idTextoWeb DESC";
-$textoaweb = mysql_query($query_textoaweb, $gabrielle) or die(mysql_error());
-$row_textoaweb = mysql_fetch_assoc($textoaweb);
-$totalRows_textoaweb = mysql_num_rows($textoaweb);
+$textoaweb =  mysqli_query($query_textoaweb, $gabrielle) or die( mysqli_error());
+$row_textoaweb =  mysqli_fetch_assoc($textoaweb);
+$totalRows_textoaweb =  mysqli_num_rows($textoaweb);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon = mysql_query($query_favicon, $gabrielle) or die(mysql_error());
-$row_favicon = mysql_fetch_assoc($favicon);
-$totalRows_favicon = mysql_num_rows($favicon);
+$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$row_favicon =  mysqli_fetch_assoc($favicon);
+$totalRows_favicon =  mysqli_num_rows($favicon);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama = mysql_query($query_anagrama, $gabrielle) or die(mysql_error());
-$row_anagrama = mysql_fetch_assoc($anagrama);
-$totalRows_anagrama = mysql_num_rows($anagrama);
+$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$row_anagrama =  mysqli_fetch_assoc($anagrama);
+$totalRows_anagrama =  mysqli_num_rows($anagrama);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_seo001 = "SELECT * FROM tblseo ORDER BY tblseo.idSeo DESC";
-$seo001 = mysql_query($query_seo001, $gabrielle) or die(mysql_error());
-$row_seo001 = mysql_fetch_assoc($seo001);
-$totalRows_seo001 = mysql_num_rows($seo001);
+$seo001 =  mysqli_query($query_seo001, $gabrielle) or die( mysqli_error());
+$row_seo001 =  mysqli_fetch_assoc($seo001);
+$totalRows_seo001 =  mysqli_num_rows($seo001);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_iconosweb = "SELECT * FROM tbliconosweb ORDER BY tbliconosweb.strPosicion ASC";
-$iconosweb = mysql_query($query_iconosweb, $gabrielle) or die(mysql_error());
-$row_iconosweb = mysql_fetch_assoc($iconosweb);
-$totalRows_iconosweb = mysql_num_rows($iconosweb);
+$iconosweb =  mysqli_query($query_iconosweb, $gabrielle) or die( mysqli_error());
+$row_iconosweb =  mysqli_fetch_assoc($iconosweb);
+$totalRows_iconosweb =  mysqli_num_rows($iconosweb);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_slider001 = "SELECT * FROM tblslider001 ORDER BY tblslider001.strPosicion ASC";
-$slider001 = mysql_query($query_slider001, $gabrielle) or die(mysql_error());
-$row_slider001 = mysql_fetch_assoc($slider001);
-$totalRows_slider001 = mysql_num_rows($slider001);
+$slider001 =  mysqli_query($query_slider001, $gabrielle) or die( mysqli_error());
+$row_slider001 =  mysqli_fetch_assoc($slider001);
+$totalRows_slider001 =  mysqli_num_rows($slider001);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_contacto = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$contacto = mysql_query($query_contacto, $gabrielle) or die(mysql_error());
-$row_contacto = mysql_fetch_assoc($contacto);
-$totalRows_contacto = mysql_num_rows($contacto);
+$contacto =  mysqli_query($query_contacto, $gabrielle) or die( mysqli_error());
+$row_contacto =  mysqli_fetch_assoc($contacto);
+$totalRows_contacto =  mysqli_num_rows($contacto);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_pack001categorias = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.strPosicion ASC";
-$pack001categorias = mysql_query($query_pack001categorias, $gabrielle) or die(mysql_error());
-$row_pack001categorias = mysql_fetch_assoc($pack001categorias);
-$totalRows_pack001categorias = mysql_num_rows($pack001categorias);
+$pack001categorias =  mysqli_query($query_pack001categorias, $gabrielle) or die( mysqli_error());
+$row_pack001categorias =  mysqli_fetch_assoc($pack001categorias);
+$totalRows_pack001categorias =  mysqli_num_rows($pack001categorias);
 
 $maxRows_novedades = 8;
 $pageNum_novedades = 0;
@@ -89,45 +89,45 @@ if (isset($_GET['pageNum_novedades'])) {
 }
 $startRow_novedades = $pageNum_novedades * $maxRows_novedades;
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_novedades = "SELECT * FROM tblpack001articulo WHERE tblpack001articulo.strNovedad ='si' ORDER BY tblpack001articulo.idArticulo DESC";
 $query_limit_novedades = sprintf("%s LIMIT %d, %d", $query_novedades, $startRow_novedades, $maxRows_novedades);
-$novedades = mysql_query($query_limit_novedades, $gabrielle) or die(mysql_error());
-$row_novedades = mysql_fetch_assoc($novedades);
+$novedades =  mysqli_query($query_limit_novedades, $gabrielle) or die( mysqli_error());
+$row_novedades =  mysqli_fetch_assoc($novedades);
 
 if (isset($_GET['totalRows_novedades'])) {
   $totalRows_novedades = $_GET['totalRows_novedades'];
 } else {
-  $all_novedades = mysql_query($query_novedades);
-  $totalRows_novedades = mysql_num_rows($all_novedades);
+  $all_novedades =  mysqli_query($query_novedades);
+  $totalRows_novedades =  mysqli_num_rows($all_novedades);
 }
 $totalPages_novedades = ceil($totalRows_novedades/$maxRows_novedades)-1;
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_pack001categoriasII = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.strPosicion ASC";
-$pack001categoriasII = mysql_query($query_pack001categoriasII, $gabrielle) or die(mysql_error());
-$row_pack001categoriasII = mysql_fetch_assoc($pack001categoriasII);
-$totalRows_pack001categoriasII = mysql_num_rows($pack001categoriasII);
+$pack001categoriasII =  mysqli_query($query_pack001categoriasII, $gabrielle) or die( mysqli_error());
+$row_pack001categoriasII =  mysqli_fetch_assoc($pack001categoriasII);
+$totalRows_pack001categoriasII =  mysqli_num_rows($pack001categoriasII);
 
 $varVerCategoria_verpackcategorias01 = "0";
 if (isset($_GET ["recordID"])) {
   $varVerCategoria_verpackcategorias01 = $_GET ["recordID"];
 }
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_verpackcategorias01 = sprintf("SELECT * FROM tblpack001categoria WHERE tblpack001categoria.idCategoria =%s", GetSQLValueString($varVerCategoria_verpackcategorias01, "int"));
-$verpackcategorias01 = mysql_query($query_verpackcategorias01, $gabrielle) or die(mysql_error());
-$row_verpackcategorias01 = mysql_fetch_assoc($verpackcategorias01);
-$totalRows_verpackcategorias01 = mysql_num_rows($verpackcategorias01);
+$verpackcategorias01 =  mysqli_query($query_verpackcategorias01, $gabrielle) or die( mysqli_error());
+$row_verpackcategorias01 =  mysqli_fetch_assoc($verpackcategorias01);
+$totalRows_verpackcategorias01 =  mysqli_num_rows($verpackcategorias01);
 
 $varIdCategoria_versubcategoriaspack001 = "0";
 if (isset($_GET ["recordID"])) {
   $varIdCategoria_versubcategoriaspack001 = $_GET ["recordID"];
 }
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_versubcategoriaspack001 = sprintf("SELECT * FROM tblpack001subcategoria WHERE tblpack001subcategoria.intCategoria = %s", GetSQLValueString($varIdCategoria_versubcategoriaspack001, "int"));
-$versubcategoriaspack001 = mysql_query($query_versubcategoriaspack001, $gabrielle) or die(mysql_error());
-$row_versubcategoriaspack001 = mysql_fetch_assoc($versubcategoriaspack001);
-$totalRows_versubcategoriaspack001 = mysql_num_rows($versubcategoriaspack001);
+$versubcategoriaspack001 =  mysqli_query($query_versubcategoriaspack001, $gabrielle) or die( mysqli_error());
+$row_versubcategoriaspack001 =  mysqli_fetch_assoc($versubcategoriaspack001);
+$totalRows_versubcategoriaspack001 =  mysqli_num_rows($versubcategoriaspack001);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/gabrielle.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -373,7 +373,7 @@ function MM_swapImage() { //v3.0
 <!--************************************************************************************************--> 
 </div>
 <?php } // Show if recordset not empty ?>
-  <?php } while ($row_versubcategoriaspack001 = mysql_fetch_assoc($versubcategoriaspack001)); ?>
+  <?php } while ($row_versubcategoriaspack001 =  mysqli_fetch_assoc($versubcategoriaspack001)); ?>
 
 
 
@@ -461,7 +461,7 @@ return $insertar_ceros .= $numero;
 	</table>
 	</div>
 <?php //} // Show if recordset not empty ?>
-  <?php } while ($row_novedades = mysql_fetch_assoc($novedades)); ?>
+  <?php } while ($row_novedades =  mysqli_fetch_assoc($novedades)); ?>
 	</td>
 	</tr>
 	</table>
@@ -488,27 +488,27 @@ return $insertar_ceros .= $numero;
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($textoaweb);
+ mysqli_free_result($textoaweb);
 
-mysql_free_result($favicon);
+ mysqli_free_result($favicon);
 
-mysql_free_result($anagrama);
+ mysqli_free_result($anagrama);
 
-mysql_free_result($seo001);
+ mysqli_free_result($seo001);
 
-mysql_free_result($iconosweb);
+ mysqli_free_result($iconosweb);
 
-mysql_free_result($slider001);
+ mysqli_free_result($slider001);
 
-mysql_free_result($contacto);
+ mysqli_free_result($contacto);
 
-mysql_free_result($pack001categorias);
+ mysqli_free_result($pack001categorias);
 
-mysql_free_result($novedades);
+ mysqli_free_result($novedades);
 
-mysql_free_result($pack001categoriasII);
+ mysqli_free_result($pack001categoriasII);
 
-mysql_free_result($verpackcategorias01);
+ mysqli_free_result($verpackcategorias01);
 
-mysql_free_result($versubcategoriaspack001);
+ mysqli_free_result($versubcategoriaspack001);
 ?>

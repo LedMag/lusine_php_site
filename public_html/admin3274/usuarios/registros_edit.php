@@ -1,5 +1,5 @@
 <?php require_once('../../Connections/trebol.php'); ?>
-<?php mysql_query("SET NAMES 'utf8'");?>
+ 
 <?php
 if (!isset($_SESSION)) {
   session_start();
@@ -53,7 +53,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -81,8 +81,8 @@ if ((isset($_GET['recordID'])) && ($_GET['recordID'] != "")) {
   $deleteSQL = sprintf("DELETE FROM tblregistro WHERE idRegistro=%s",
                        GetSQLValueString($_GET['recordID'], "int"));
 
-  mysql_select_db($database_trebol, $trebol);
-  $Result1 = mysql_query($deleteSQL, $trebol) or die(mysql_error());
+   mysqli_select_db($database_trebol, $trebol);
+  $Result1 =  mysqli_query($deleteSQL, $trebol) or die( mysqli_error());
 
   $deleteGoTo = "registros_lista.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -92,33 +92,33 @@ if ((isset($_GET['recordID'])) && ($_GET['recordID'] != "")) {
   header(sprintf("Location: %s", $deleteGoTo));
 }
 
-mysql_select_db($database_trebol, $trebol);
+ mysqli_select_db($database_trebol, $trebol);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon = mysql_query($query_favicon, $trebol) or die(mysql_error());
-$row_favicon = mysql_fetch_assoc($favicon);
-$totalRows_favicon = mysql_num_rows($favicon);
+$favicon =  mysqli_query($query_favicon, $trebol) or die( mysqli_error());
+$row_favicon =  mysqli_fetch_assoc($favicon);
+$totalRows_favicon =  mysqli_num_rows($favicon);
 
-mysql_select_db($database_trebol, $trebol);
+ mysqli_select_db($database_trebol, $trebol);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama = mysql_query($query_anagrama, $trebol) or die(mysql_error());
-$row_anagrama = mysql_fetch_assoc($anagrama);
-$totalRows_anagrama = mysql_num_rows($anagrama);
+$anagrama =  mysqli_query($query_anagrama, $trebol) or die( mysqli_error());
+$row_anagrama =  mysqli_fetch_assoc($anagrama);
+$totalRows_anagrama =  mysqli_num_rows($anagrama);
 
-mysql_select_db($database_trebol, $trebol);
+ mysqli_select_db($database_trebol, $trebol);
 $query_datos = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$datos = mysql_query($query_datos, $trebol) or die(mysql_error());
-$row_datos = mysql_fetch_assoc($datos);
-$totalRows_datos = mysql_num_rows($datos);
+$datos =  mysqli_query($query_datos, $trebol) or die( mysqli_error());
+$row_datos =  mysqli_fetch_assoc($datos);
+$totalRows_datos =  mysqli_num_rows($datos);
 
 $varRegistro_registros = "0";
 if (isset($_GET ["recordID"])) {
   $varRegistro_registros = $_GET ["recordID"];
 }
-mysql_select_db($database_trebol, $trebol);
+ mysqli_select_db($database_trebol, $trebol);
 $query_registros = sprintf("SELECT * FROM tblregistro WHERE tblregistro.idRegistro =%s", GetSQLValueString($varRegistro_registros, "int"));
-$registros = mysql_query($query_registros, $trebol) or die(mysql_error());
-$row_registros = mysql_fetch_assoc($registros);
-$totalRows_registros = mysql_num_rows($registros);
+$registros =  mysqli_query($query_registros, $trebol) or die( mysqli_error());
+$row_registros =  mysqli_fetch_assoc($registros);
+$totalRows_registros =  mysqli_num_rows($registros);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/adminewv3.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -292,11 +292,11 @@ eliminando....
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($favicon);
+ mysqli_free_result($favicon);
 
-mysql_free_result($anagrama);
+ mysqli_free_result($anagrama);
 
-mysql_free_result($datos);
+ mysqli_free_result($datos);
 
-mysql_free_result($registros);
+ mysqli_free_result($registros);
 ?>

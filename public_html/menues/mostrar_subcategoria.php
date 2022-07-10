@@ -55,7 +55,7 @@ onmouseover="MM_swapImage('botart<?php echo $row_pack001subcategoriaver['idSubCa
 </table>
 </div>
 <?php  } // Show if recordset not empty ?>
-<?php } while ($row_pack001subcategoriaver = mysql_fetch_assoc($pack001subcategoriaver)); ?>
+<?php } while ($row_pack001subcategoriaver =  mysqli_fetch_assoc($pack001subcategoriaver)); ?>
 </div>
 </td>
 </tr>
@@ -76,7 +76,7 @@ onmouseover="MM_swapImage('botart<?php echo $row_pack001subcategoriaver['idSubCa
 </tr>
 </table>
 <?php } // Show if recordset not empty ?>
-<?php } while ($row_uno = mysql_fetch_assoc($uno)); ?>
+<?php } while ($row_uno =  mysqli_fetch_assoc($uno)); ?>
 </div>
 
 <?php } // Show if recordset not empty ?>
@@ -117,7 +117,7 @@ onmouseover="MM_swapImage('botart<?php echo $row_pack001subcategoriaver['idSubCa
 </table>
 </div>
 <?php  } // Show if recordset not empty ?>
-<?php } while ($row_pack001subcategoriaver = mysql_fetch_assoc($pack001subcategoriaver)); ?>
+<?php } while ($row_pack001subcategoriaver =  mysqli_fetch_assoc($pack001subcategoriaver)); ?>
 </div>
 </td>
 </tr>
@@ -138,7 +138,7 @@ onmouseover="MM_swapImage('botart<?php echo $row_pack001subcategoriaver['idSubCa
 </tr>
 </table>
 <?php } // Show if recordset not empty ?>
-<?php } while ($row_uno = mysql_fetch_assoc($uno)); ?>
+<?php } while ($row_uno =  mysqli_fetch_assoc($uno)); ?>
 </div>
 
 <?php } // Show if recordset not empty ?>
@@ -178,7 +178,7 @@ onmouseover="MM_swapImage('botart<?php echo $row_pack001subcategoriaver['idSubCa
 </table>
 </div>
 <?php  } // Show if recordset not empty ?>
-<?php } while ($row_pack001subcategoriaver = mysql_fetch_assoc($pack001subcategoriaver)); ?>
+<?php } while ($row_pack001subcategoriaver =  mysqli_fetch_assoc($pack001subcategoriaver)); ?>
 </div>
 </td>
 </tr>
@@ -199,7 +199,7 @@ onmouseover="MM_swapImage('botart<?php echo $row_pack001subcategoriaver['idSubCa
 </tr>
 </table>
 <?php } // Show if recordset not empty ?>
-<?php } while ($row_uno = mysql_fetch_assoc($uno)); ?>
+<?php } while ($row_uno =  mysqli_fetch_assoc($uno)); ?>
 </div>
 
 <?php } // Show if recordset not empty ?>
@@ -240,7 +240,7 @@ onmouseover="MM_swapImage('botart<?php echo $row_pack001subcategoriaver['idSubCa
 </table>
 </div>
 <?php  } // Show if recordset not empty ?>
-<?php } while ($row_pack001subcategoriaver = mysql_fetch_assoc($pack001subcategoriaver)); ?>
+<?php } while ($row_pack001subcategoriaver =  mysqli_fetch_assoc($pack001subcategoriaver)); ?>
 </div>
 </td>
 </tr>
@@ -261,7 +261,7 @@ onmouseover="MM_swapImage('botart<?php echo $row_pack001subcategoriaver['idSubCa
 </tr>
 </table>
 <?php } // Show if recordset not empty ?>
-<?php } while ($row_uno = mysql_fetch_assoc($uno)); ?>
+<?php } while ($row_uno =  mysqli_fetch_assoc($uno)); ?>
 </div>
 
 <?php } // Show if recordset not empty ?>

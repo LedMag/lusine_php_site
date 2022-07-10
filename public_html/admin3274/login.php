@@ -7,7 +7,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -31,17 +31,17 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama = mysql_query($query_anagrama, $gabrielle) or die(mysql_error());
-$row_anagrama = mysql_fetch_assoc($anagrama);
-$totalRows_anagrama = mysql_num_rows($anagrama);
+$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$row_anagrama =  mysqli_fetch_assoc($anagrama);
+$totalRows_anagrama =  mysqli_num_rows($anagrama);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon = mysql_query($query_favicon, $gabrielle) or die(mysql_error());
-$row_favicon = mysql_fetch_assoc($favicon);
-$totalRows_favicon = mysql_num_rows($favicon);
+$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$row_favicon =  mysqli_fetch_assoc($favicon);
+$totalRows_favicon =  mysqli_num_rows($favicon);
 ?>
 <?php
 // *** Validate request to login to this site.
@@ -61,16 +61,16 @@ if (isset($_POST['textfield'])) {
   $MM_redirectLoginSuccess = "index.php";
   $MM_redirectLoginFailed = "login-error.php";
   $MM_redirecttoReferrer = true;
-  mysql_select_db($database_gabrielle, $gabrielle);
+   mysqli_select_db($database_gabrielle, $gabrielle);
   	
   $LoginRS__query=sprintf("SELECT strNombre, strPassword, strLevel FROM tblusuario WHERE strNombre=%s AND strPassword=%s",
   GetSQLValueString($loginUsername, "text"), GetSQLValueString(md5($password), "text"));
    
-  $LoginRS = mysql_query($LoginRS__query, $gabrielle) or die(mysql_error());
-  $loginFoundUser = mysql_num_rows($LoginRS);
+  $LoginRS =  mysqli_query($LoginRS__query, $gabrielle) or die( mysqli_error());
+  $loginFoundUser =  mysqli_num_rows($LoginRS);
   if ($loginFoundUser) {
     
-    $loginStrGroup  = mysql_result($LoginRS,0,'strLevel');
+    $loginStrGroup  =  mysqli_result($LoginRS,0,'strLevel');
     
 	if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
     //declare two session variables and assign them
@@ -353,7 +353,7 @@ o <br />
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($anagrama);
+ mysqli_free_result($anagrama);
 
-mysql_free_result($favicon);
+ mysqli_free_result($favicon);
 ?>

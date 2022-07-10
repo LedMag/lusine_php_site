@@ -92,7 +92,7 @@ return $insertar_ceros .= $numero;
 
   </div>
   <?php } // Show if recordset not empty ?>  
-  <?php } while ($row_articulo = mysql_fetch_assoc($articulo)); ?>
+  <?php } while ($row_articulo =  mysqli_fetch_assoc($articulo)); ?>
   </div>
       
       
@@ -125,7 +125,7 @@ return $insertar_ceros .= $numero;
         </tr>
     </table>
     <div class="separadoruno"></div>
-    <?php } while ($row_articulophone = mysql_fetch_assoc($articulophone)); ?>
+    <?php } while ($row_articulophone =  mysqli_fetch_assoc($articulophone)); ?>
  </div>  
 <?php } // Show if recordset not empty ?>
 <!--****************************************************************************************-->
@@ -182,7 +182,7 @@ return $insertar_ceros .= $numero;
   </table>
   </div>
   <?php } // Show if recordset not empty ?>  
-  <?php } while ($row_articulo = mysql_fetch_assoc($articulo)); ?>
+  <?php } while ($row_articulo =  mysqli_fetch_assoc($articulo)); ?>
   </div>
       
       
@@ -215,7 +215,7 @@ return $insertar_ceros .= $numero;
         </tr>
     </table>
     <div class="separadoruno"></div>
-    <?php } while ($row_articulophone = mysql_fetch_assoc($articulophone)); ?>
+    <?php } while ($row_articulophone =  mysqli_fetch_assoc($articulophone)); ?>
  </div> 
 
 <?php } // Show if recordset not empty ?>
@@ -274,7 +274,7 @@ return $insertar_ceros .= $numero;
   </table>
   </div>
   <?php } // Show if recordset not empty ?>  
-  <?php } while ($row_articulo = mysql_fetch_assoc($articulo)); ?>
+  <?php } while ($row_articulo =  mysqli_fetch_assoc($articulo)); ?>
   </div>
       
       
@@ -307,7 +307,7 @@ return $insertar_ceros .= $numero;
         </tr>
     </table>
     <div class="separadoruno"></div>
-    <?php } while ($row_articulophone = mysql_fetch_assoc($articulophone)); ?>
+    <?php } while ($row_articulophone =  mysqli_fetch_assoc($articulophone)); ?>
  </div> 
 
 <?php } // Show if recordset not empty ?>

@@ -41,7 +41,7 @@ $url= $_SERVER['REQUEST_URI'];
 <img src="admin3274/slider001/img/<?php echo $row_slider001['strImagen']; ?>" width="100%" alt="Imagen publicidad servicios y productos de Trébol Mobiliario" />
 <?php } // Show if recordset not empty ?>
 
-<?php } while ($row_slider001 = mysql_fetch_assoc($slider001)); ?>
+<?php } while ($row_slider001 =  mysqli_fetch_assoc($slider001)); ?>
 </div>
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/jquery.nivo.slider.js" type="text/javascript"></script>
@@ -95,7 +95,7 @@ $('#slider').nivoSlider ({
 <?php if ($row_slider001['strActiva'] != "no") { // Show if recordset empty ?>
 <img src="../admin3274/slider001/img/<?php echo $row_slider001['strImagen']; ?>" width="100%" alt="Imagen publicidad servicios y productos de Trébol Mobiliario" />
 <?php } // Show if recordset not empty ?>
-<?php } while ($row_slider001 = mysql_fetch_assoc($slider001)); ?>
+<?php } while ($row_slider001 =  mysqli_fetch_assoc($slider001)); ?>
 </div>
 <script src="../js/jquery.min.js" type="text/javascript"></script>
 <script src="../js/jquery.nivo.slider.js" type="text/javascript"></script>

@@ -1,5 +1,5 @@
 <?php require_once('../../Connections/gabrielle.php'); ?>
-<?php mysql_query("SET NAMES 'utf8'");?>
+ 
 <?php
 if (!isset($_SESSION)) {
   session_start();
@@ -53,7 +53,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -77,23 +77,23 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon = mysql_query($query_favicon, $gabrielle) or die(mysql_error());
-$row_favicon = mysql_fetch_assoc($favicon);
-$totalRows_favicon = mysql_num_rows($favicon);
+$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$row_favicon =  mysqli_fetch_assoc($favicon);
+$totalRows_favicon =  mysqli_num_rows($favicon);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_slider = "SELECT * FROM tblslider001 ORDER BY tblslider001.strPosicion ASC";
-$slider = mysql_query($query_slider, $gabrielle) or die(mysql_error());
-$row_slider = mysql_fetch_assoc($slider);
-$totalRows_slider = mysql_num_rows($slider);
+$slider =  mysqli_query($query_slider, $gabrielle) or die( mysqli_error());
+$row_slider =  mysqli_fetch_assoc($slider);
+$totalRows_slider =  mysqli_num_rows($slider);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama = mysql_query($query_anagrama, $gabrielle) or die(mysql_error());
-$row_anagrama = mysql_fetch_assoc($anagrama);
-$totalRows_anagrama = mysql_num_rows($anagrama);
+$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$row_anagrama =  mysqli_fetch_assoc($anagrama);
+$totalRows_anagrama =  mysqli_num_rows($anagrama);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -247,7 +247,7 @@ Mostrar:<br /><strong>"<?php echo $row_slider['strDescripcion']; ?>"</strong>
   </div>
 
 <div class="separadorarlineas"></div>
-<?php } while ($row_slider = mysql_fetch_assoc($slider)); ?>
+<?php } while ($row_slider =  mysqli_fetch_assoc($slider)); ?>
 <!-- InstanceEndEditable -->
 </td>
 </tr>
@@ -282,9 +282,9 @@ Mostrar:<br /><strong>"<?php echo $row_slider['strDescripcion']; ?>"</strong>
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($favicon);
+ mysqli_free_result($favicon);
 
-mysql_free_result($slider);
+ mysqli_free_result($slider);
 
-mysql_free_result($anagrama);
+ mysqli_free_result($anagrama);
 ?>

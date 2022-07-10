@@ -1,5 +1,5 @@
 <?php require_once('../../Connections/gabrielle.php'); ?>
-<?php mysql_query("SET NAMES 'utf8'");?>
+ 
 <?php
 if (!isset($_SESSION)) {
   session_start();
@@ -53,7 +53,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -77,35 +77,35 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_usuarios = "SELECT * FROM tblusuario ORDER BY tblusuario.strLevel DESC";
-$usuarios = mysql_query($query_usuarios, $gabrielle) or die(mysql_error());
-$row_usuarios = mysql_fetch_assoc($usuarios);
-$totalRows_usuarios = mysql_num_rows($usuarios);
+$usuarios =  mysqli_query($query_usuarios, $gabrielle) or die( mysqli_error());
+$row_usuarios =  mysqli_fetch_assoc($usuarios);
+$totalRows_usuarios =  mysqli_num_rows($usuarios);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon = mysql_query($query_favicon, $gabrielle) or die(mysql_error());
-$row_favicon = mysql_fetch_assoc($favicon);
-$totalRows_favicon = mysql_num_rows($favicon);
+$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$row_favicon =  mysqli_fetch_assoc($favicon);
+$totalRows_favicon =  mysqli_num_rows($favicon);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama = mysql_query($query_anagrama, $gabrielle) or die(mysql_error());
-$row_anagrama = mysql_fetch_assoc($anagrama);
-$totalRows_anagrama = mysql_num_rows($anagrama);
+$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$row_anagrama =  mysqli_fetch_assoc($anagrama);
+$totalRows_anagrama =  mysqli_num_rows($anagrama);
 
-/*mysql_select_db($database_gabrielle, $gabrielle);
+/* mysqli_select_db($database_gabrielle, $gabrielle);
 $query_pack001subcategoria = "SELECT * FROM tblpack001subcategoria WHERE strNombre != 'CATÁLOGO COMPLETO' ORDER BY tblpack001subcategoria.intCategoria ASC, tblpack001subcategoria.strPosicion ASC";
-$pack001subcategoria = mysql_query($query_pack001subcategoria, $gabrielle) or die(mysql_error());
-$row_pack001subcategoria = mysql_fetch_assoc($pack001subcategoria);
-$totalRows_pack001subcategoria = mysql_num_rows($pack001subcategoria);*/
+$pack001subcategoria =  mysqli_query($query_pack001subcategoria, $gabrielle) or die( mysqli_error());
+$row_pack001subcategoria =  mysqli_fetch_assoc($pack001subcategoria);
+$totalRows_pack001subcategoria =  mysqli_num_rows($pack001subcategoria);*/
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_pack001subcategoria = "SELECT * FROM tblpack001subcategoria ORDER BY tblpack001subcategoria.idSubCategoria ASC";
-$pack001subcategoria = mysql_query($query_pack001subcategoria, $gabrielle) or die(mysql_error());
-$row_pack001subcategoria = mysql_fetch_assoc($pack001subcategoria);
-$totalRows_pack001subcategoria = mysql_num_rows($pack001subcategoria);
+$pack001subcategoria =  mysqli_query($query_pack001subcategoria, $gabrielle) or die( mysqli_error());
+$row_pack001subcategoria =  mysqli_fetch_assoc($pack001subcategoria);
+$totalRows_pack001subcategoria =  mysqli_num_rows($pack001subcategoria);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/adminewv3.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -123,14 +123,14 @@ $totalRows_pack001subcategoria = mysql_num_rows($pack001subcategoria);
 {
 
 	global $database_gabrielle, $gabrielle;
-	mysql_select_db($database_gabrielle, $gabrielle);
+	 mysqli_select_db($database_gabrielle, $gabrielle);
 	$query_ConsultaFuncion = sprintf("SELECT strNombre FROM tblpack001categoria WHERE idCategoria = %s", $identificador);
-	$ConsultaFuncion = mysql_query($query_ConsultaFuncion, $gabrielle) or die(mysql_error());
-	$row_ConsultaFuncion = mysql_fetch_assoc($ConsultaFuncion);
-	$totalRows_ConsultaFuncion = mysql_num_rows($ConsultaFuncion);
+	$ConsultaFuncion =  mysqli_query($query_ConsultaFuncion, $gabrielle) or die( mysqli_error());
+	$row_ConsultaFuncion =  mysqli_fetch_assoc($ConsultaFuncion);
+	$totalRows_ConsultaFuncion =  mysqli_num_rows($ConsultaFuncion);
 	
 	return $row_ConsultaFuncion['strNombre']; 
-	mysql_free_result($ConsultaFuncion);
+	 mysqli_free_result($ConsultaFuncion);
 }?>
 
 
@@ -270,7 +270,7 @@ NO EXISTEN SUBCATEGORÍAS EN ESTE MOMENTO...
     </div>
 <div class="separadorarlineas"></div>
   <?php } // Show if recordset empty ?>
-	<?php } while ($row_pack001subcategoria = mysql_fetch_assoc($pack001subcategoria)); ?>
+	<?php } while ($row_pack001subcategoria =  mysqli_fetch_assoc($pack001subcategoria)); ?>
    <?php } // Show if recordset empty ?>   
     
     
@@ -319,11 +319,11 @@ NO EXISTEN SUBCATEGORÍAS EN ESTE MOMENTO...
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($usuarios);
+ mysqli_free_result($usuarios);
 
-mysql_free_result($favicon);
+ mysqli_free_result($favicon);
 
-mysql_free_result($anagrama);
+ mysqli_free_result($anagrama);
 
-mysql_free_result($pack001subcategoria);
+ mysqli_free_result($pack001subcategoria);
 ?>

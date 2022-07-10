@@ -1,5 +1,5 @@
 <?php require_once('../Connections/gabrielle.php'); ?>
-<?php mysql_query("SET NAMES 'utf8'");?>
+ 
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -8,7 +8,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -34,23 +34,23 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 $currentPage = $_SERVER["PHP_SELF"];
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_textoaweb = "SELECT * FROM tbltextoweb ORDER BY tbltextoweb.idTextoWeb DESC";
-$textoaweb = mysql_query($query_textoaweb, $gabrielle) or die(mysql_error());
-$row_textoaweb = mysql_fetch_assoc($textoaweb);
-$totalRows_textoaweb = mysql_num_rows($textoaweb);
+$textoaweb =  mysqli_query($query_textoaweb, $gabrielle) or die( mysqli_error());
+$row_textoaweb =  mysqli_fetch_assoc($textoaweb);
+$totalRows_textoaweb =  mysqli_num_rows($textoaweb);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon = mysql_query($query_favicon, $gabrielle) or die(mysql_error());
-$row_favicon = mysql_fetch_assoc($favicon);
-$totalRows_favicon = mysql_num_rows($favicon);
+$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$row_favicon =  mysqli_fetch_assoc($favicon);
+$totalRows_favicon =  mysqli_num_rows($favicon);
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama = mysql_query($query_anagrama, $gabrielle) or die(mysql_error());
-$row_anagrama = mysql_fetch_assoc($anagrama);
-$totalRows_anagrama = mysql_num_rows($anagrama);
+$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$row_anagrama =  mysqli_fetch_assoc($anagrama);
+$totalRows_anagrama =  mysqli_num_rows($anagrama);
 
 $maxRows_articulo = 1;
 $pageNum_articulo = 0;
@@ -63,25 +63,25 @@ $varSub_articulo = "0";
 if (isset($_GET ["recordID"])) {
   $varSub_articulo = $_GET ["recordID"];
 }
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_articulo = sprintf("SELECT * FROM tblpack001articulo WHERE tblpack001articulo.intSubCategoria =%s ORDER BY tblpack001articulo.idArticulo DESC", GetSQLValueString($varSub_articulo, "int"));
 $query_limit_articulo = sprintf("%s LIMIT %d, %d", $query_articulo, $startRow_articulo, $maxRows_articulo);
-$articulo = mysql_query($query_limit_articulo, $gabrielle) or die(mysql_error());
-$row_articulo = mysql_fetch_assoc($articulo);
+$articulo =  mysqli_query($query_limit_articulo, $gabrielle) or die( mysqli_error());
+$row_articulo =  mysqli_fetch_assoc($articulo);
 
 if (isset($_GET['totalRows_articulo'])) {
   $totalRows_articulo = $_GET['totalRows_articulo'];
 } else {
-  $all_articulo = mysql_query($query_articulo);
-  $totalRows_articulo = mysql_num_rows($all_articulo);
+  $all_articulo =  mysqli_query($query_articulo);
+  $totalRows_articulo =  mysqli_num_rows($all_articulo);
 }
 $totalPages_articulo = ceil($totalRows_articulo/$maxRows_articulo)-1;
 
-mysql_select_db($database_gabrielle, $gabrielle);
+ mysqli_select_db($database_gabrielle, $gabrielle);
 $query_contacto = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$contacto = mysql_query($query_contacto, $gabrielle) or die(mysql_error());
-$row_contacto = mysql_fetch_assoc($contacto);
-$totalRows_contacto = mysql_num_rows($contacto);
+$contacto =  mysqli_query($query_contacto, $gabrielle) or die( mysqli_error());
+$row_contacto =  mysqli_fetch_assoc($contacto);
+$totalRows_contacto =  mysqli_num_rows($contacto);
 
 $queryString_articulo = "";
 if (!empty($_SERVER['QUERY_STRING'])) {
@@ -264,7 +264,7 @@ function MM_swapImage() { //v3.0
  <!--************************************************************************************************--><!--************************************************************************************************--> 
 
 <!--************************************************************************************************--><!--************************************************************************************************--><!--************************************************************************************************-->  
-  <?php } while ($row_articulo = mysql_fetch_assoc($articulo)); ?>
+  <?php } while ($row_articulo =  mysqli_fetch_assoc($articulo)); ?>
 
 
 <div class="separadoruno"></div>
@@ -314,14 +314,14 @@ function MM_swapImage() { //v3.0
 </body>
 </html>
 <?php
-mysql_free_result($textoaweb);
+ mysqli_free_result($textoaweb);
 
 
-mysql_free_result($favicon);
+ mysqli_free_result($favicon);
 
-mysql_free_result($anagrama);
+ mysqli_free_result($anagrama);
 
-mysql_free_result($articulo);
+ mysqli_free_result($articulo);
 
-mysql_free_result($contacto);
+ mysqli_free_result($contacto);
 ?>

@@ -1,5 +1,5 @@
 <?php require_once('../../Connections/trebol.php'); ?>
-<?php mysql_query("SET NAMES 'utf8'");?>
+ 
 <?php
 if (!isset($_SESSION)) {
   session_start();
@@ -53,7 +53,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -77,40 +77,40 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_trebol, $trebol);
+ mysqli_select_db($database_trebol, $trebol);
 $query_usuarios = "SELECT * FROM tblusuario ORDER BY tblusuario.strLevel DESC";
-$usuarios = mysql_query($query_usuarios, $trebol) or die(mysql_error());
-$row_usuarios = mysql_fetch_assoc($usuarios);
-$totalRows_usuarios = mysql_num_rows($usuarios);
+$usuarios =  mysqli_query($query_usuarios, $trebol) or die( mysqli_error());
+$row_usuarios =  mysqli_fetch_assoc($usuarios);
+$totalRows_usuarios =  mysqli_num_rows($usuarios);
 
-mysql_select_db($database_trebol, $trebol);
+ mysqli_select_db($database_trebol, $trebol);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon = mysql_query($query_favicon, $trebol) or die(mysql_error());
-$row_favicon = mysql_fetch_assoc($favicon);
-$totalRows_favicon = mysql_num_rows($favicon);
+$favicon =  mysqli_query($query_favicon, $trebol) or die( mysqli_error());
+$row_favicon =  mysqli_fetch_assoc($favicon);
+$totalRows_favicon =  mysqli_num_rows($favicon);
 
-mysql_select_db($database_trebol, $trebol);
+ mysqli_select_db($database_trebol, $trebol);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama = mysql_query($query_anagrama, $trebol) or die(mysql_error());
-$row_anagrama = mysql_fetch_assoc($anagrama);
-$totalRows_anagrama = mysql_num_rows($anagrama);
+$anagrama =  mysqli_query($query_anagrama, $trebol) or die( mysqli_error());
+$row_anagrama =  mysqli_fetch_assoc($anagrama);
+$totalRows_anagrama =  mysqli_num_rows($anagrama);
 
-mysql_select_db($database_trebol, $trebol);
+ mysqli_select_db($database_trebol, $trebol);
 $query_pack001subcategoria = "SELECT * FROM tblpack001subcategoria ORDER BY tblpack001subcategoria.strPosicion ASC";
-$pack001subcategoria = mysql_query($query_pack001subcategoria, $trebol) or die(mysql_error());
-$row_pack001subcategoria = mysql_fetch_assoc($pack001subcategoria);
-$totalRows_pack001subcategoria = mysql_num_rows($pack001subcategoria);
+$pack001subcategoria =  mysqli_query($query_pack001subcategoria, $trebol) or die( mysqli_error());
+$row_pack001subcategoria =  mysqli_fetch_assoc($pack001subcategoria);
+$totalRows_pack001subcategoria =  mysqli_num_rows($pack001subcategoria);
 
 $varArticulo_Pack001articulo = "0";
 if (isset($_GET ["FBuscar"])) {
 $varArticulo_Pack001articulo = $_GET ["FBuscar"];
 }
-mysql_select_db($database_trebol, $trebol);
+ mysqli_select_db($database_trebol, $trebol);
 $query_Pack001articulo = "SELECT * FROM tblPack001articulo WHERE tblPack001articulo.strNombre LIKE '%".$varArticulo_Pack001articulo."%' ORDER BY tblPack001articulo.idArticulo ASC";
 
-$Pack001articulo = mysql_query($query_Pack001articulo, $trebol) or die(mysql_error());
-$row_Pack001articulo = mysql_fetch_assoc($Pack001articulo);
-$totalRows_Pack001articulo = mysql_num_rows($Pack001articulo);
+$Pack001articulo =  mysqli_query($query_Pack001articulo, $trebol) or die( mysqli_error());
+$row_Pack001articulo =  mysqli_fetch_assoc($Pack001articulo);
+$totalRows_Pack001articulo =  mysqli_num_rows($Pack001articulo);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/adminewv3.dwt.php" codeOutsideHTMLIsLocked="false" -->
@@ -255,7 +255,7 @@ $totalRows_Pack001articulo = mysql_num_rows($Pack001articulo);
     Mostrar artículo: <strong><?php echo $row_Pack001articulo['strActiva']; ?></strong>
     </div>
 	<div class="separadorarlineas"></div>
-	<?php } while ($row_Pack001articulo = mysql_fetch_assoc($Pack001articulo)); ?>
+	<?php } while ($row_Pack001articulo =  mysqli_fetch_assoc($Pack001articulo)); ?>
     
 </div>
 </div>
@@ -295,13 +295,13 @@ $totalRows_Pack001articulo = mysql_num_rows($Pack001articulo);
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($usuarios);
+ mysqli_free_result($usuarios);
 
-mysql_free_result($favicon);
+ mysqli_free_result($favicon);
 
-mysql_free_result($anagrama);
+ mysqli_free_result($anagrama);
 
-mysql_free_result($pack001subcategoria);
+ mysqli_free_result($pack001subcategoria);
 
-mysql_free_result($Pack001articulo);
+ mysqli_free_result($Pack001articulo);
 ?>
