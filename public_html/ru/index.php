@@ -2,13 +2,11 @@
  
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+ function GetSQLValueString($gabrielle, $theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+   
 
-  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
+  $theValue = mysqli_real_escape_string($gabrielle,  $theValue);
 
   switch ($theType) {
     case "text":
@@ -85,67 +83,25 @@ $totalRows_slider001 =  mysqli_num_rows($slider001);
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_contacto = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$contacto =  mysqli_select_db($gabrielle, $contacto) or die( mysqli_error($gabrielle));
+$contacto =  mysqli_query($gabrielle, $query_contacto) or die( mysqli_error($gabrielle));
 $row_contacto =  mysqli_fetch_assoc($contacto);
 $totalRows_contacto =  mysqli_num_rows($contacto);
 
-//  mysqli_select_db($gabrielle, $database_gabrielle);
-//$query_pack001categorias = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.strPosicion ASC";
-//$pack001categorias =  mysqli_query($query_pack001categorias, $gabrielle) or die( mysqli_error($gabrielle));
-//$row_pack001categorias =  mysqli_fetch_assoc($pack001categorias);
-//$totalRows_pack001categorias =  mysqli_num_rows($pack001categorias);
-
-//  mysqli_select_db($gabrielle, $database_gabrielle);
-//$query_pack001categoriasphone = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.strPosicion ASC";
-//$pack001categoriasphone =  mysqli_query($query_pack001categoriasphone, $gabrielle) or die( mysqli_error($gabrielle));
-//$row_pack001categoriasphone =  mysqli_fetch_assoc($pack001categoriasphone);
-//$totalRows_pack001categoriasphone =  mysqli_num_rows($pack001categoriasphone);
-
-
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_pack001subcategoriaver = "SELECT * FROM tblpack001subcategoria ORDER BY tblpack001subcategoria.idSubCategoria ASC";
-$pack001subcategoriaver =  mysqli_query($query_pack001subcategoriaver, $gabrielle) or die( mysqli_error($gabrielle));
+$pack001subcategoriaver =  mysqli_query($gabrielle, $query_pack001subcategoriaver) or die( mysqli_error($gabrielle));
 $row_pack001subcategoriaver =  mysqli_fetch_assoc($pack001subcategoriaver);
 $totalRows_pack001subcategoriaver =  mysqli_num_rows($pack001subcategoriaver);
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_uno = "SELECT * FROM tblpack001subcategoria ORDER BY tblpack001subcategoria.strPosicion ASC";
-$uno =  mysqli_query($query_uno, $gabrielle) or die( mysqli_error($gabrielle));
+$uno =  mysqli_query($gabrielle, $query_uno) or die( mysqli_error($gabrielle));
 $row_uno =  mysqli_fetch_assoc($uno);
 $totalRows_uno =  mysqli_num_rows($uno);
 
-
-
-//tblpack001subcategoria
-//pack001subcategoria
-
-
-
-
-//$maxRows_novedades = 8;
-//$pageNum_novedades = 0;
-//if (isset($_GET['pageNum_novedades'])) {
-//  $pageNum_novedades = $_GET['pageNum_novedades'];
-//}
-//$startRow_novedades = $pageNum_novedades * $maxRows_novedades;
-
-//  mysqli_select_db($gabrielle, $database_gabrielle);
-//$query_novedades = "SELECT * FROM tblpack001articulo WHERE tblpack001articulo.strNovedad ='si' ORDER BY tblpack001articulo.idArticulo DESC";
-//$query_limit_novedades = sprintf("%s LIMIT %d, %d", $query_novedades, $startRow_novedades, $maxRows_novedades);
-//$novedades =  mysqli_query($query_limit_novedades, $gabrielle) or die( mysqli_error($gabrielle));
-//$row_novedades =  mysqli_fetch_assoc($novedades);
-
-//if (isset($_GET['totalRows_novedades'])) {
-//  $totalRows_novedades = $_GET['totalRows_novedades'];
-//} else {
-//  $all_novedades =  mysqli_query($query_novedades);
-//  $totalRows_novedades =  mysqli_num_rows($all_novedades);
-//}
-//$totalPages_novedades = ceil($totalRows_novedades/$maxRows_novedades)-1;
-
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_pack001categoriasII = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.strPosicion ASC";
-$pack001categoriasII =  mysqli_query($query_pack001categoriasII, $gabrielle) or die( mysqli_error($gabrielle));
+$pack001categoriasII =  mysqli_query($gabrielle, $query_pack001categoriasII) or die( mysqli_error($gabrielle));
 $row_pack001categoriasII =  mysqli_fetch_assoc($pack001categoriasII);
 $totalRows_pack001categoriasII =  mysqli_num_rows($pack001categoriasII);
 ?>
@@ -226,60 +182,26 @@ var uw="whatsapp://send?text="+ub;
 
 <div class="general">
 <div class="espacioweb">
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
 <?php include("../menues/cabecera_one.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
 <?php include("../menues/menuhorizontal001.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
 <?php include("../admin3274/slider001/slider001.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
 <?php include("../menues/texto_principal_seo.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
 <?php include("../menues/texto_cabecera_categorias.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
 <?php include("../menues/mostrar_subcategoria.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
 <?php include("../menues/iconos_navegacion.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
 <?php include("../menues/footer.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
 </div>
 </div>
 </body>
 </html>
 <?php
  mysqli_free_result($textoaweb);
-
  mysqli_free_result($favicon);
-
  mysqli_free_result($anagrama);
-
  mysqli_free_result($seo001);
-
  mysqli_free_result($iconosweb);
-
  mysqli_free_result($slider001);
-
  mysqli_free_result($contacto);
-
-// mysqli_free_result($pack001categorias);
-
-// mysqli_free_result($pack001categoriasphone);
-
-// mysqli_free_result($novedades);
-
-// mysqli_free_result($pack001categoriasII);
-
  mysqli_free_result($pack001subcategoriaver);
-
  mysqli_free_result($uno);
 ?>

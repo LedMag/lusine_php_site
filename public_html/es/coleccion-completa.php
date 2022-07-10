@@ -2,13 +2,11 @@
  
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+ function GetSQLValueString($gabrielle, $theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+   
 
-  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
+  $theValue = mysqli_real_escape_string($gabrielle,  $theValue);
 
   switch ($theType) {
     case "text":
@@ -58,7 +56,7 @@ $totalRows_seo001 =  mysqli_num_rows($seo001);
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_iconosweb = "SELECT * FROM tbliconosweb ORDER BY tbliconosweb.strPosicion ASC";
-$iconosweb =  mysqli_query($query_iconosweb, $gabrielle) or die( mysqli_error($gabrielle));
+$iconosweb =  mysqli_query($gabrielle, $query_iconosweb) or die( mysqli_error($gabrielle));
 $row_iconosweb =  mysqli_fetch_assoc($iconosweb);
 $totalRows_iconosweb =  mysqli_num_rows($iconosweb);
 
@@ -70,19 +68,19 @@ $totalRows_slider001 =  mysqli_num_rows($slider001);
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_contacto = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$contacto =  mysqli_select_db($gabrielle, $contacto) or die( mysqli_error($gabrielle));
+$contacto =  mysqli_query($gabrielle, $query_contacto) or die( mysqli_error($gabrielle));
 $row_contacto =  mysqli_fetch_assoc($contacto);
 $totalRows_contacto =  mysqli_num_rows($contacto);
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_novedades = "SELECT * FROM tblpack001articulo ORDER BY tblpack001articulo.idArticulo DESC";
-$novedades =  mysqli_query($query_novedades, $gabrielle) or die( mysqli_error($gabrielle));
+$novedades =  mysqli_query($gabrielle, $query_novedades) or die( mysqli_error($gabrielle));
 $row_novedades =  mysqli_fetch_assoc($novedades);
 $totalRows_novedades =  mysqli_num_rows($novedades);
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_pack001categoriasII = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.strPosicion ASC";
-$pack001categoriasII =  mysqli_query($query_pack001categoriasII, $gabrielle) or die( mysqli_error($gabrielle));
+$pack001categoriasII =  mysqli_query($gabrielle, $query_pack001categoriasII) or die( mysqli_error($gabrielle));
 $row_pack001categoriasII =  mysqli_fetch_assoc($pack001categoriasII);
 $totalRows_pack001categoriasII =  mysqli_num_rows($pack001categoriasII);
 
@@ -92,7 +90,7 @@ if (isset($_GET ["recordID"])) {
 }
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_verpackcategorias01 = sprintf("SELECT * FROM tblpack001categoria WHERE tblpack001categoria.idCategoria =%s", GetSQLValueString($varVerCategoria_verpackcategorias01, "int"));
-$verpackcategorias01 =  mysqli_query($query_verpackcategorias01, $gabrielle) or die( mysqli_error($gabrielle));
+$verpackcategorias01 =  mysqli_query($gabrielle, $query_verpackcategorias01) or die( mysqli_error($gabrielle));
 $row_verpackcategorias01 =  mysqli_fetch_assoc($verpackcategorias01);
 $totalRows_verpackcategorias01 =  mysqli_num_rows($verpackcategorias01);
 
@@ -102,19 +100,19 @@ if (isset($_GET ["recordID"])) {
 }
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_versubcategoriaspack001 = sprintf("SELECT * FROM tblpack001subcategoria WHERE tblpack001subcategoria.idSubCategoria = %s", GetSQLValueString($varIdCategoria_versubcategoriaspack001, "int"));
-$versubcategoriaspack001 =  mysqli_query($query_versubcategoriaspack001, $gabrielle) or die( mysqli_error($gabrielle));
+$versubcategoriaspack001 =  mysqli_query($gabrielle, $query_versubcategoriaspack001) or die( mysqli_error($gabrielle));
 $row_versubcategoriaspack001 =  mysqli_fetch_assoc($versubcategoriaspack001);
 $totalRows_versubcategoriaspack001 =  mysqli_num_rows($versubcategoriaspack001);
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_articulo = "SELECT * FROM tblpack001articulo ORDER BY tblpack001articulo.idArticulo ASC";
-$articulo =  mysqli_query($query_articulo, $gabrielle) or die( mysqli_error($gabrielle));
+$articulo =  mysqli_query($gabrielle, $query_articulo) or die( mysqli_error($gabrielle));
 $row_articulo =  mysqli_fetch_assoc($articulo);
 $totalRows_articulo =  mysqli_num_rows($articulo);
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_articulazo = "SELECT * FROM tblpack001articulo ORDER BY tblpack001articulo.strPosicion ASC";
-$articulazo =  mysqli_query($query_articulazo, $gabrielle) or die( mysqli_error($gabrielle));
+$articulazo =  mysqli_query($gabrielle, $query_articulazo) or die( mysqli_error($gabrielle));
 $row_articulazo =  mysqli_fetch_assoc($articulazo);
 $totalRows_articulazo =  mysqli_num_rows($articulazo);
 ?>
@@ -200,12 +198,12 @@ var uw="whatsapp://send?text="+ub;
 
 <div id="general">
 <div class="espacioweb">
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="analytics" -->
 
 
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="cabecera" -->
 
 <table width="100%" border="0">
@@ -239,7 +237,7 @@ var uw="whatsapp://send?text="+ub;
 </table>
 
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="horizontal" -->
 <div class="separadoruno"></div>
 <table width="100%" border="0">
@@ -253,7 +251,7 @@ var uw="whatsapp://send?text="+ub;
 </table>
 <div class="separadoruno"></div>
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="horizontaldos" -->
 <!--<table width="100%" border="0">
 <tr>
@@ -265,7 +263,7 @@ var uw="whatsapp://send?text="+ub;
 </tr>
 </table>-->
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="slider" -->
 <table width="100%" border="0">
 <tr>
@@ -276,7 +274,7 @@ var uw="whatsapp://send?text="+ub;
 </tr>
 </table>
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="textoprincipal" -->
 <div class="separadoruno"></div>
 <table width="100%" border="0">
@@ -289,7 +287,7 @@ var uw="whatsapp://send?text="+ub;
 </tr>
 </table>
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="contenido1" -->
 <div class="separadoruno"></div>
 <table width="100%" border="0">
@@ -302,26 +300,26 @@ var uw="whatsapp://send?text="+ub;
 </tr>
 </table>
 <div class="separadoruno"></div>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
+
+
 <table width="100%" border="0">
   <tr>
   <td>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************--> 
+
+
+
+
+
+
+
+
+ 
 
 <?php if ($totalRows_articulo > NULL) { // Show if recordset not empty ?>
 
-<!--************************************************************************************************-->
+
 <?php function llenar_ceros($numero, $ceros) {
 $dif = $ceros - strlen($numero); 
 for($m = 0 ;$m < $dif; $m++) 
@@ -330,15 +328,15 @@ for($m = 0 ;$m < $dif; $m++)
 } 
 return $insertar_ceros .= $numero; 
 }?>
-<!--************************************************************************************************-->
+
 <div class="totalcategoriapack001">
 <?php do { ?>
 <?php if ($row_articulo['strActiva'] == "si") { // Show if recordset not empty ?>
 <?php if ($row_articulo['intCat'] == 1) { // Show if recordset not empty ?>
-<!--************************************************************************************************--> 
+ 
 <?php $idArticulo = $row_articulo['idArticulo']; ?>
 <?php $autoceros =llenar_ceros($idArticulo,5);?>
-<!--************************************************************************************************-->
+
 <div class="botoncategoriapack001">
     <table width="100%" border="0"><tr>
       <td>
@@ -384,34 +382,34 @@ No hay ARTÍCULOS en esta COLECCIÓN por el momento, DISCULPEN LAS MOLESTIAS...
 </div>
 <?php } // Show if recordset empty ?>
 
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
 
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </td>
 </tr>
 </table>
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="contenido2" -->
 <div class="separadoruno"></div>
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="footer" -->
 <table width="100%" border="0">
 <tr>
@@ -425,7 +423,7 @@ No hay ARTÍCULOS en esta COLECCIÓN por el momento, DISCULPEN LAS MOLESTIAS...
 </tr>
 </table>
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 </div>
 </div>
 </body>

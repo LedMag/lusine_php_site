@@ -27,7 +27,7 @@ display:none;
 
 
 
-@media screen and (min-width: 800px) { 
+@media screen and (min-width: 812px) { 
 
 .ocultarpc{
 		display: none;
@@ -256,9 +256,14 @@ display:none;
 /***************************************************************************************	*/
 .totalcategoriapack001 {
 	overflow: hidden;
-	text-align: center;/*	background-image: url(../gif/fondos/cat.jpg);
-	background-repeat: repeat-x;*/
+	text-align: center;
 }
+@media screen and (max-width: 800px){ 
+	.totalcategoriapack001{
+		display: none;
+	}
+}
+
 .botoncategoriapack001 {
 	float: left;
 	width: 15.95%;

@@ -2,13 +2,11 @@
  
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+ function GetSQLValueString($gabrielle, $theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+   
 
-  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
+  $theValue = mysqli_real_escape_string($gabrielle,  $theValue);
 
   switch ($theType) {
     case "text":
@@ -60,7 +58,7 @@ $totalRows_seo001 =  mysqli_num_rows($seo001);
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_iconosweb = "SELECT * FROM tbliconosweb ORDER BY tbliconosweb.strPosicion ASC";
-$iconosweb =  mysqli_query($query_iconosweb, $gabrielle) or die( mysqli_error($gabrielle));
+$iconosweb =  mysqli_query($gabrielle, $query_iconosweb) or die( mysqli_error($gabrielle));
 $row_iconosweb =  mysqli_fetch_assoc($iconosweb);
 $totalRows_iconosweb =  mysqli_num_rows($iconosweb);
 
@@ -72,7 +70,7 @@ $totalRows_slider001 =  mysqli_num_rows($slider001);
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_contacto = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$contacto =  mysqli_select_db($gabrielle, $contacto) or die( mysqli_error($gabrielle));
+$contacto =  mysqli_query($gabrielle, $query_contacto) or die( mysqli_error($gabrielle));
 $row_contacto =  mysqli_fetch_assoc($contacto);
 $totalRows_contacto =  mysqli_num_rows($contacto);
 
@@ -105,7 +103,7 @@ $totalPages_novedades = ceil($totalRows_novedades/$maxRows_novedades)-1;
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_pack001categoriasII = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.strPosicion ASC";
-$pack001categoriasII =  mysqli_query($query_pack001categoriasII, $gabrielle) or die( mysqli_error($gabrielle));
+$pack001categoriasII =  mysqli_query($gabrielle, $query_pack001categoriasII) or die( mysqli_error($gabrielle));
 $row_pack001categoriasII =  mysqli_fetch_assoc($pack001categoriasII);
 $totalRows_pack001categoriasII =  mysqli_num_rows($pack001categoriasII);
 
@@ -115,7 +113,7 @@ if (isset($_GET ["recordID"])) {
 }
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_verpackcategorias01 = sprintf("SELECT * FROM tblpack001categoria WHERE tblpack001categoria.idCategoria =%s", GetSQLValueString($varVerCategoria_verpackcategorias01, "int"));
-$verpackcategorias01 =  mysqli_query($query_verpackcategorias01, $gabrielle) or die( mysqli_error($gabrielle));
+$verpackcategorias01 =  mysqli_query($gabrielle, $query_verpackcategorias01) or die( mysqli_error($gabrielle));
 $row_verpackcategorias01 =  mysqli_fetch_assoc($verpackcategorias01);
 $totalRows_verpackcategorias01 =  mysqli_num_rows($verpackcategorias01);
 
@@ -125,7 +123,7 @@ if (isset($_GET ["recordID"])) {
 }
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_versubcategoriaspack001 = sprintf("SELECT * FROM tblpack001subcategoria WHERE tblpack001subcategoria.intCategoria = %s", GetSQLValueString($varIdCategoria_versubcategoriaspack001, "int"));
-$versubcategoriaspack001 =  mysqli_query($query_versubcategoriaspack001, $gabrielle) or die( mysqli_error($gabrielle));
+$versubcategoriaspack001 =  mysqli_query($gabrielle, $query_versubcategoriaspack001) or die( mysqli_error($gabrielle));
 $row_versubcategoriaspack001 =  mysqli_fetch_assoc($versubcategoriaspack001);
 $totalRows_versubcategoriaspack001 =  mysqli_num_rows($versubcategoriaspack001);
 ?>
@@ -209,12 +207,12 @@ function MM_swapImage() { //v3.0
 
 <div id="general">
 <div class="espacioweb">
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="analytics" -->
 
 
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="cabecera" -->
 
 <table width="100%" border="0">
@@ -248,7 +246,7 @@ function MM_swapImage() { //v3.0
 </table>
 
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="horizontal" -->
 <div class="separadoruno"></div>
 <table width="100%" border="0">
@@ -262,7 +260,7 @@ function MM_swapImage() { //v3.0
 </table>
 <div class="separadoruno"></div>
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="horizontaldos" -->
 <!--<table width="100%" border="0">
 <tr>
@@ -274,7 +272,7 @@ function MM_swapImage() { //v3.0
 </tr>
 </table>-->
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="slider" -->
 <table width="100%" border="0">
 <tr>
@@ -286,7 +284,7 @@ function MM_swapImage() { //v3.0
 </tr>
 </table>
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="textoprincipal" -->
 <div class="separadoruno"></div>
 <table width="100%" border="0">
@@ -299,7 +297,7 @@ function MM_swapImage() { //v3.0
 </tr>
 </table>
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="contenido1" -->
 <div class="separadoruno"></div>
 <table width="100%" border="0">
@@ -312,14 +310,14 @@ function MM_swapImage() { //v3.0
 </tr>
 </table>
 <div class="separadoruno"></div>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
+
+
+
+
+
+
 <table width="100%" border="0">
   <tr>
   <td>
@@ -328,8 +326,8 @@ function MM_swapImage() { //v3.0
 <div class="totalcategoriapack001">
 
 
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <?php if ($totalRows_versubcategoriaspack001 != 1) { // Show if recordset not empty ?>
   <div class="botoncategoriapack001">
     <table width="100%" border="0">
@@ -347,15 +345,15 @@ function MM_swapImage() { //v3.0
         </table> 
   </div>
   <?php } // Show if recordset not empty ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 
 
 <?php do { ?>
 <?php if ($row_versubcategoriaspack001['strActiva'] =="si") { // Show if recordset not empty ?>
 <div class="botoncategoriapack001">
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <table width="100%" border="0"><tr>
 <td align="center" class="gotico">
 <?php echo $row_versubcategoriaspack001['strNombreRu']; ?> 
@@ -372,8 +370,8 @@ function MM_swapImage() { //v3.0
 </tr>
 <tr>
 </table>
-<!--************************************************************************************************-->
-<!--************************************************************************************************--> 
+
+ 
 </div>
 <?php } // Show if recordset not empty ?>
   <?php } while ($row_versubcategoriaspack001 =  mysqli_fetch_assoc($versubcategoriaspack001)); ?>
@@ -388,18 +386,18 @@ function MM_swapImage() { //v3.0
 No hay COLECCIONES en esta CATEGORÍA por el momento, DISCULPEN LAS MOLESTIAS...
 </div>
   <?php } // Show if recordset empty ?>
-  <!--************************************************************************************************-->
-  <!--************************************************************************************************-->
-  <!--************************************************************************************************-->
-  <!--************************************************************************************************-->
-  <!--************************************************************************************************-->
-  <!--************************************************************************************************-->
-  <!--************************************************************************************************-->
+  
+  
+  
+  
+  
+  
+  
   </td>
   </tr>
 </table>
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="contenido2" -->
 <div class="separadoruno"></div>
 <table width="100%" border="0">
@@ -417,9 +415,9 @@ No hay COLECCIONES en esta CATEGORÍA por el momento, DISCULPEN LAS MOLESTIAS...
 <tr>
 <td>
 <div class="totalcategoriapack002">
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************--> 
+
+
+ 
 <?php function llenar_ceros($numero, $ceros) {
 $dif = $ceros - strlen($numero); 
 for($m = 0 ;$m < $dif; $m++) 
@@ -428,21 +426,21 @@ for($m = 0 ;$m < $dif; $m++)
 } 
 return $insertar_ceros .= $numero; 
 }?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
+
 <?php do { ?>
 <?php //if ($row_novedades['strActiva'] == "si") { // Show if recordset not empty ?>
 
 
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
+
 <?php $idArticulo = $row_novedades['idArticulo']; ?>
 <?php $autoceros =llenar_ceros($idArticulo,5);?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
+
 	<div class="botoncategoriapack002">
 	<table width="100%" border="0"><tr>
 	<td>
@@ -475,7 +473,7 @@ return $insertar_ceros .= $numero;
 <div class="separadoruno"></div>
 
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 <!-- InstanceBeginEditable name="footer" -->
 <table width="100%" border="0">
 <tr>
@@ -489,7 +487,7 @@ return $insertar_ceros .= $numero;
 </tr>
 </table>
 <!-- InstanceEndEditable -->
-<!--************************************************************************************************-->
+
 </div>
 </div>
 </body>

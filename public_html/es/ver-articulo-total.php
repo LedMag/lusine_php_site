@@ -2,13 +2,11 @@
  
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+ function GetSQLValueString($gabrielle, $theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+   
 
-  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
+  $theValue = mysqli_real_escape_string($gabrielle,  $theValue);
 
   switch ($theType) {
     case "text":
@@ -79,7 +77,7 @@ $totalPages_articulo = ceil($totalRows_articulo/$maxRows_articulo)-1;
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_contacto = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$contacto =  mysqli_select_db($gabrielle, $contacto) or die( mysqli_error($gabrielle));
+$contacto =  mysqli_query($gabrielle, $query_contacto) or die( mysqli_error($gabrielle));
 $row_contacto =  mysqli_fetch_assoc($contacto);
 $totalRows_contacto =  mysqli_num_rows($contacto);
 
@@ -89,7 +87,7 @@ if (isset($_GET ["recordID"])) {
 }
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_articulophone = sprintf("SELECT * FROM tblpack001articulo WHERE tblpack001articulo.intSubCategoria =%s ORDER BY tblpack001articulo.idArticulo DESC", GetSQLValueString($varSub_articulophone, "int"));
-$articulophone =  mysqli_query($query_articulophone, $gabrielle) or die( mysqli_error($gabrielle));
+$articulophone =  mysqli_query($gabrielle, $query_articulophone) or die( mysqli_error($gabrielle));
 $row_articulophone =  mysqli_fetch_assoc($articulophone);
 $totalRows_articulophone =  mysqli_num_rows($articulophone);
 
@@ -205,8 +203,8 @@ function MM_swapImage() { //v3.0
 <div id="general">
 <div class="ocultarphone">
 <div class="espaciowebproducto">
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <table width="100%" border="0">
 <tr>
   <td width="80%" rowspan="2" align="left">
@@ -219,12 +217,12 @@ function MM_swapImage() { //v3.0
 </td>
 </tr>
 </table>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <?php do { ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
+
   <table width="100%" border="0" align="center" class="gotico">
     <tr><td width="100%" colspan="3" align="center">
       <img src="../admin3274/pack001/img/articulo/<?php echo $row_articulo['strImagen']; ?>" width="100%" />
@@ -267,17 +265,17 @@ function MM_swapImage() { //v3.0
       </tr>
     <?php } // Show if recordset not empty ?>   
   </table>
-<!--************************************************************************************************--><!--************************************************************************************************--> 
+ 
 <?php } while ($row_articulo =  mysqli_fetch_assoc($articulo)); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <?php include("../menues/iconos_navegacion_articulo.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <?php include("../menues/footer.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
+
 </div>
 </div>
 
@@ -291,8 +289,8 @@ function MM_swapImage() { //v3.0
 
 <div class="ocultarpc">
 <div class="espaciowebproductophone">
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <table width="100%" border="0">
 <tr>
   <td width="80%" rowspan="2" align="left">
@@ -305,12 +303,12 @@ function MM_swapImage() { //v3.0
 </td>
 </tr>
 </table>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <?php do { ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
+
   <table width="100%" border="0" align="center" class="gotico">
     <tr><td width="100%" colspan="3" align="center">
       <img src="../admin3274/pack001/img/articulo/<?php echo $row_articulophone['strImagen']; ?>" width="100%" />
@@ -351,17 +349,17 @@ function MM_swapImage() { //v3.0
       </tr>
     <?php } // Show if recordset not empty ?>   
   </table>
-<!--************************************************************************************************--><!--************************************************************************************************--> 
+ 
 <?php } while ($row_articulophone =  mysqli_fetch_assoc($row_articulophone)); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <?php include("../menues/iconos_navegacion_articulo.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <?php include("../menues/footer.php"); ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
+
 </div>
 </div>
 </div>

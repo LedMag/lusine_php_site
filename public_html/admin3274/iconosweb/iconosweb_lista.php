@@ -47,13 +47,11 @@ if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers,
 ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+ function GetSQLValueString($gabrielle, $theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+   
 
-  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
+  $theValue = mysqli_real_escape_string($gabrielle,  $theValue);
 
   switch ($theType) {
     case "text":
@@ -91,7 +89,7 @@ $totalRows_anagrama =  mysqli_num_rows($anagrama);
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_iconosweb = "SELECT * FROM tbliconosweb ORDER BY tbliconosweb.strPosicion ASC";
-$iconosweb =  mysqli_query($query_iconosweb, $gabrielle) or die( mysqli_error($gabrielle));
+$iconosweb =  mysqli_query($gabrielle, $query_iconosweb) or die( mysqli_error($gabrielle));
 $row_iconosweb =  mysqli_fetch_assoc($iconosweb);
 $totalRows_iconosweb =  mysqli_num_rows($iconosweb);
 

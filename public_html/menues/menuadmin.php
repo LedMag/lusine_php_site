@@ -15,9 +15,9 @@ $url= $_SERVER['REQUEST_URI'];
 <?php if ($clase == "webmaster" or $clase == "administrador" or $clase == "usuario") { // Show if recordset not empty ?>
 <?php } // Show if recordset not empty ?>
 </div>
-<!--***********************************************************************************************-->
+
 <!--************************************ CONTENIDOS ADMINISTRACIÓN ********************************-->
-<!--***********************************************************************************************-->
+
 <?php if ($url != $urluno) { // Show if recordset not empty ?>
 
 <script src="../../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
@@ -49,11 +49,11 @@ $url= $_SERVER['REQUEST_URI'];
 var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
 </script>
 <?php } // Show if recordset not empty ?>
-<!--***********************************************************************************************-->
-<!--***********************************************************************************************-->
+
+
 <!--************************************ CONTENIDOS ADMINISTRACIÓN ********************************-->
-<!--***********************************************************************************************-->
-<!--***********************************************************************************************-->
+
+
 
 <?php if ($url == $urluno) { // Show if recordset not empty ?>
 
@@ -87,7 +87,7 @@ var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenu
 var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
 </script>
 <?php } // Show if recordset not empty ?>
-<!--***********************************************************************************************-->
-<!--***********************************************************************************************-->
-<!--***********************************************************************************************-->
-<!--***********************************************************************************************-->
+
+
+
+

@@ -50,8 +50,8 @@ $url= $_SERVER['REQUEST_URI'];
 </td>
 </tr>
 </table>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <div class="articulo">
 <table width="100%" border="0" align="center" class="gotico">
 <tr><td width="100%" colspan="3" align="center">
@@ -61,7 +61,7 @@ $url= $_SERVER['REQUEST_URI'];
 </table>
 <table width="100%" border="0" align="center" class="gotico">
 </div>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strNombre'] > NULL) { // Show if recordset not empty ?>
 <tr>
   <td width="25%" align="right" valign="top"><strong>NOMBRE</strong>:</td>
@@ -69,7 +69,7 @@ $url= $_SERVER['REQUEST_URI'];
   <td width="2%">&nbsp;</td>
 </tr>
 <?php } // Show if recordset not empty ?>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strDescripcion'] > NULL) { // Show if recordset not empty ?> 
 
 <tr>
@@ -78,7 +78,7 @@ $url= $_SERVER['REQUEST_URI'];
     <td class="descripcione"></td>
   </tr>
 <?php } // Show if recordset not empty ?>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strMedidas'] > NULL) { // Show if recordset not empty ?>  
   <tr>
     <td align="right" valign="top"><strong>MEDIDAS</strong>:</td>
@@ -86,7 +86,7 @@ $url= $_SERVER['REQUEST_URI'];
     <td>&nbsp;</td>
   </tr>
 <?php } // Show if recordset not empty ?>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strPeso'] > NULL) { // Show if recordset not empty ?>
   <tr>
     <td align="right" valign="top"><strong>PESO</strong>:</td>
@@ -119,8 +119,8 @@ $url= $_SERVER['REQUEST_URI'];
 </td>
 </tr>
 </table>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <div class="articulo">
 <table width="100%" border="0" align="center" class="gotico">
 <tr><td width="100%" colspan="3" align="center">
@@ -130,7 +130,7 @@ $url= $_SERVER['REQUEST_URI'];
 </table>
 <table width="100%" border="0" align="center" class="gotico">
 </div>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strNombreEn'] > NULL) { // Show if recordset not empty ?>
 <tr>
   <td width="25%" align="right" valign="top"><strong>NAME</strong>:</td>
@@ -138,7 +138,7 @@ $url= $_SERVER['REQUEST_URI'];
   <td width="2%">&nbsp;</td>
 </tr>
 <?php } // Show if recordset not empty ?>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strDescripcionEn'] > NULL) { // Show if recordset not empty ?> 
 
 <tr>
@@ -147,7 +147,7 @@ $url= $_SERVER['REQUEST_URI'];
     <td class="descripcione"></td>
   </tr>
 <?php } // Show if recordset not empty ?>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strMedidas'] > NULL) { // Show if recordset not empty ?>  
   <tr>
     <td align="right" valign="top"><strong>MESURES</strong>:</td>
@@ -155,7 +155,7 @@ $url= $_SERVER['REQUEST_URI'];
     <td>&nbsp;</td>
   </tr>
 <?php } // Show if recordset not empty ?>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strPeso'] > NULL) { // Show if recordset not empty ?>
   <tr>
     <td align="right" valign="top"><strong>WEIGHT</strong>:</td>
@@ -190,8 +190,8 @@ $url= $_SERVER['REQUEST_URI'];
 </td>
 </tr>
 </table>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <div class="articulo">
 <table width="100%" border="0" align="center" class="gotico">
 <tr><td width="100%" colspan="3" align="center">
@@ -201,7 +201,7 @@ $url= $_SERVER['REQUEST_URI'];
 </table>
 <table width="100%" border="0" align="center" class="gotico">
 </div>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strNombreRu'] > NULL) { // Show if recordset not empty ?>
 <tr>
   <td width="25%" align="right" valign="top"><strong>ИМЯ</strong>:</td>
@@ -209,7 +209,7 @@ $url= $_SERVER['REQUEST_URI'];
   <td width="2%">&nbsp;</td>
 </tr>
 <?php } // Show if recordset not empty ?>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strDescripcionRu'] > NULL) { // Show if recordset not empty ?> 
 
 <tr>
@@ -218,7 +218,7 @@ $url= $_SERVER['REQUEST_URI'];
     <td class="descripcione"></td>
   </tr>
 <?php } // Show if recordset not empty ?>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strMedidas'] > NULL) { // Show if recordset not empty ?>  
   <tr>
     <td align="right" valign="top"><strong>МЕРЫ</strong>:</td>
@@ -226,7 +226,7 @@ $url= $_SERVER['REQUEST_URI'];
     <td>&nbsp;</td>
   </tr>
 <?php } // Show if recordset not empty ?>
-<!--************************************************************************************************-->
+
 <?php if ($row_articulo['strPeso'] > NULL) { // Show if recordset not empty ?>
   <tr>
     <td align="right" valign="top"><strong>МАССА</strong>:</td>

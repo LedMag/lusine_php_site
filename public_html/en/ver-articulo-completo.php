@@ -2,13 +2,11 @@
  
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+ function GetSQLValueString($gabrielle, $theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+   
 
-  $theValue = function_exists(" mysqli_real_escape_string") ?  mysqli_real_escape_string($theValue) :  mysqli_escape_string($theValue);
+  $theValue = mysqli_real_escape_string($gabrielle,  $theValue);
 
   switch ($theType) {
     case "text":
@@ -75,7 +73,7 @@ $totalPages_articulo = ceil($totalRows_articulo/$maxRows_articulo)-1;
 
   mysqli_select_db($gabrielle, $database_gabrielle);
 $query_contacto = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$contacto =  mysqli_select_db($gabrielle, $contacto) or die( mysqli_error($gabrielle));
+$contacto =  mysqli_query($gabrielle, $query_contacto) or die( mysqli_error($gabrielle));
 $row_contacto =  mysqli_fetch_assoc($contacto);
 $totalRows_contacto =  mysqli_num_rows($contacto);
 
@@ -187,8 +185,8 @@ function MM_swapImage() { //v3.0
 
 <div id="general">
 <div class="espaciowebproducto">
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
 <table width="100%" border="0">
 <tr>
   <td width="80%" rowspan="2" align="left">
@@ -201,13 +199,13 @@ function MM_swapImage() { //v3.0
 </td>
 </tr>
 </table>
-<!--************************************************************************************************-->
+
 <div class="separadoruno"></div>
-<!--************************************************************************************************-->
+
 <?php do { ?>
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
-<!--************************************************************************************************-->
+
+
+
   <table width="100%" border="0" align="center" class="gotico">
     <tr><td width="100%" colspan="3" align="center">
       <img src="../admin3274/pack001/img/articulo/<?php echo $row_articulo['strImagen']; ?>" width="100%" />
@@ -251,15 +249,15 @@ function MM_swapImage() { //v3.0
     <?php } // Show if recordset not empty ?>   
   </table>
   
-<!--************************************************************************************************--><!--************************************************************************************************--> 
+ 
 
 
 
 
   
- <!--************************************************************************************************--><!--************************************************************************************************--> 
+  
 
-<!--************************************************************************************************--><!--************************************************************************************************--><!--************************************************************************************************-->  
+  
   <?php } while ($row_articulo =  mysqli_fetch_assoc($articulo)); ?>
 
 
@@ -267,7 +265,7 @@ function MM_swapImage() { //v3.0
 
 
 
-<!--************************************************************************************************-->
+
 <table width="100%" border="0">
   <tr>
   <td align="center" class="goticomini">
@@ -285,7 +283,7 @@ function MM_swapImage() { //v3.0
     © <?php echo $row_textoaweb['strTexto5En']; ?>  </td>
   </tr>
 </table>
-<!--************************************************************************************************-->
+
 </div>
 </div>
 
