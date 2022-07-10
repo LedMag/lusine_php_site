@@ -79,25 +79,25 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
  mysqli_select_db($database_trebol, $trebol);
 $query_usuarios = "SELECT * FROM tblusuario ORDER BY tblusuario.strLevel DESC";
-$usuarios =  mysqli_query($query_usuarios, $trebol) or die( mysqli_error());
+$usuarios =  mysqli_query($query_usuarios, $trebol) or die( mysqli_error($gabrielle));
 $row_usuarios =  mysqli_fetch_assoc($usuarios);
 $totalRows_usuarios =  mysqli_num_rows($usuarios);
 
  mysqli_select_db($database_trebol, $trebol);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon =  mysqli_query($query_favicon, $trebol) or die( mysqli_error());
+$favicon =  mysqli_query($query_favicon, $trebol) or die( mysqli_error($gabrielle));
 $row_favicon =  mysqli_fetch_assoc($favicon);
 $totalRows_favicon =  mysqli_num_rows($favicon);
 
  mysqli_select_db($database_trebol, $trebol);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama =  mysqli_query($query_anagrama, $trebol) or die( mysqli_error());
+$anagrama =  mysqli_query($query_anagrama, $trebol) or die( mysqli_error($gabrielle));
 $row_anagrama =  mysqli_fetch_assoc($anagrama);
 $totalRows_anagrama =  mysqli_num_rows($anagrama);
 
  mysqli_select_db($database_trebol, $trebol);
 $query_pack001subcategoria = "SELECT * FROM tblpack001subcategoria ORDER BY tblpack001subcategoria.strPosicion ASC";
-$pack001subcategoria =  mysqli_query($query_pack001subcategoria, $trebol) or die( mysqli_error());
+$pack001subcategoria =  mysqli_query($query_pack001subcategoria, $trebol) or die( mysqli_error($gabrielle));
 $row_pack001subcategoria =  mysqli_fetch_assoc($pack001subcategoria);
 $totalRows_pack001subcategoria =  mysqli_num_rows($pack001subcategoria);
 
@@ -108,7 +108,7 @@ $varArticulo_Pack001articulo = $_GET ["FBuscar"];
  mysqli_select_db($database_trebol, $trebol);
 $query_Pack001articulo = "SELECT * FROM tblPack001articulo WHERE tblPack001articulo.strNombre LIKE '%".$varArticulo_Pack001articulo."%' ORDER BY tblPack001articulo.idArticulo ASC";
 
-$Pack001articulo =  mysqli_query($query_Pack001articulo, $trebol) or die( mysqli_error());
+$Pack001articulo =  mysqli_query($query_Pack001articulo, $trebol) or die( mysqli_error($gabrielle));
 $row_Pack001articulo =  mysqli_fetch_assoc($Pack001articulo);
 $totalRows_Pack001articulo =  mysqli_num_rows($Pack001articulo);
 ?>

@@ -90,8 +90,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 					   GetSQLValueString($_POST['strEnlace'], "text"),
                        GetSQLValueString($_POST['strDescripcion'], "text"));
 
-   mysqli_select_db($database_gabrielle, $gabrielle);
-  $Result1 =  mysqli_query($insertSQL, $gabrielle) or die( mysqli_error());
+    mysqli_select_db($gabrielle, $database_gabrielle);
+  $Result1 =  mysqli_query($insertSQL, $gabrielle) or die( mysqli_error($gabrielle));
 
   $insertGoTo = "slider001_lista.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -101,21 +101,21 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   header(sprintf("Location: %s", $insertGoTo));
 }
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$favicon =  mysqli_query($gabrielle, $query_favicon) or die( mysqli_error($gabrielle));
 $row_favicon =  mysqli_fetch_assoc($favicon);
 $totalRows_favicon =  mysqli_num_rows($favicon);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_slider = "SELECT * FROM tblslider001 ORDER BY tblslider001.idImagen ASC";
-$slider =  mysqli_query($query_slider, $gabrielle) or die( mysqli_error());
+$slider =  mysqli_query($query_slider, $gabrielle) or die( mysqli_error($gabrielle));
 $row_slider =  mysqli_fetch_assoc($slider);
 $totalRows_slider =  mysqli_num_rows($slider);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$anagrama =  mysqli_query($gabrielle, $query_anagrama) or die( mysqli_error($gabrielle));
 $row_anagrama =  mysqli_fetch_assoc($anagrama);
 $totalRows_anagrama =  mysqli_num_rows($anagrama);
 ?>

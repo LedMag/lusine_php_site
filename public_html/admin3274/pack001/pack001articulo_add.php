@@ -127,8 +127,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 						GetSQLValueString($_POST['strActiva'], "text"),
                        	GetSQLValueString($_POST['strNovedad'], "text"));
 
-   mysqli_select_db($database_gabrielle, $gabrielle);
-  $Result1 =  mysqli_query($insertSQL, $gabrielle) or die( mysqli_error());
+    mysqli_select_db($gabrielle, $database_gabrielle);
+  $Result1 =  mysqli_query($insertSQL, $gabrielle) or die( mysqli_error($gabrielle));
 
   $insertGoTo = "pack001articulo_lista.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -138,39 +138,39 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   header(sprintf("Location: %s", $insertGoTo));
 }
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_usuarios = "SELECT * FROM tblusuario ORDER BY tblusuario.strLevel DESC";
-$usuarios =  mysqli_query($query_usuarios, $gabrielle) or die( mysqli_error());
+$usuarios =  mysqli_query($query_usuarios, $gabrielle) or die( mysqli_error($gabrielle));
 $row_usuarios =  mysqli_fetch_assoc($usuarios);
 $totalRows_usuarios =  mysqli_num_rows($usuarios);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$favicon =  mysqli_query($gabrielle, $query_favicon) or die( mysqli_error($gabrielle));
 $row_favicon =  mysqli_fetch_assoc($favicon);
 $totalRows_favicon =  mysqli_num_rows($favicon);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$anagrama =  mysqli_query($gabrielle, $query_anagrama) or die( mysqli_error($gabrielle));
 $row_anagrama =  mysqli_fetch_assoc($anagrama);
 $totalRows_anagrama =  mysqli_num_rows($anagrama);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_pack001subcategoria = "SELECT * FROM tblpack001subcategoria WHERE strNombre != 'CATÁLOGO COMPLETO' ORDER BY tblpack001subcategoria.strPosicion ASC";
-$pack001subcategoria =  mysqli_query($query_pack001subcategoria, $gabrielle) or die( mysqli_error());
+$pack001subcategoria =  mysqli_query($query_pack001subcategoria, $gabrielle) or die( mysqli_error($gabrielle));
 $row_pack001subcategoria =  mysqli_fetch_assoc($pack001subcategoria);
 $totalRows_pack001subcategoria =  mysqli_num_rows($pack001subcategoria);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_pack001articulo = "SELECT * FROM tblpack001articulo ORDER BY tblpack001articulo.strPosicion ASC";
-$pack001articulo =  mysqli_query($query_pack001articulo, $gabrielle) or die( mysqli_error());
+$pack001articulo =  mysqli_query($query_pack001articulo, $gabrielle) or die( mysqli_error($gabrielle));
 $row_pack001articulo =  mysqli_fetch_assoc($pack001articulo);
 $totalRows_pack001articulo =  mysqli_num_rows($pack001articulo);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_categoria = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.idCategoria ASC";
-$categoria =  mysqli_query($query_categoria, $gabrielle) or die( mysqli_error());
+$categoria =  mysqli_query($query_categoria, $gabrielle) or die( mysqli_error($gabrielle));
 $row_categoria =  mysqli_fetch_assoc($categoria);
 $totalRows_categoria =  mysqli_num_rows($categoria);
 ?>

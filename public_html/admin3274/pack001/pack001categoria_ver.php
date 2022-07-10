@@ -77,21 +77,21 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_usuarios = "SELECT * FROM tblusuario ORDER BY tblusuario.strLevel DESC";
-$usuarios =  mysqli_query($query_usuarios, $gabrielle) or die( mysqli_error());
+$usuarios =  mysqli_query($query_usuarios, $gabrielle) or die( mysqli_error($gabrielle));
 $row_usuarios =  mysqli_fetch_assoc($usuarios);
 $totalRows_usuarios =  mysqli_num_rows($usuarios);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$favicon =  mysqli_query($gabrielle, $query_favicon) or die( mysqli_error($gabrielle));
 $row_favicon =  mysqli_fetch_assoc($favicon);
 $totalRows_favicon =  mysqli_num_rows($favicon);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$anagrama =  mysqli_query($gabrielle, $query_anagrama) or die( mysqli_error($gabrielle));
 $row_anagrama =  mysqli_fetch_assoc($anagrama);
 $totalRows_anagrama =  mysqli_num_rows($anagrama);
 
@@ -99,9 +99,9 @@ $varCategoria_pack001categoria = "0";
 if (isset($_GET ["recordID"])) {
   $varCategoria_pack001categoria = $_GET ["recordID"];
 }
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_pack001categoria = sprintf("SELECT * FROM tblpack001categoria WHERE tblpack001categoria.idCategoria =%s", GetSQLValueString($varCategoria_pack001categoria, "int"));
-$pack001categoria =  mysqli_query($query_pack001categoria, $gabrielle) or die( mysqli_error());
+$pack001categoria =  mysqli_query($query_pack001categoria, $gabrielle) or die( mysqli_error($gabrielle));
 $row_pack001categoria =  mysqli_fetch_assoc($pack001categoria);
 $totalRows_pack001categoria =  mysqli_num_rows($pack001categoria);
 ?>

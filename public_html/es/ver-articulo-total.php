@@ -34,21 +34,21 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 $currentPage = $_SERVER["PHP_SELF"];
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_textoaweb = "SELECT * FROM tbltextoweb ORDER BY tbltextoweb.idTextoWeb DESC";
-$textoaweb =  mysqli_query($query_textoaweb, $gabrielle) or die( mysqli_error());
+$textoaweb =  mysqli_query($gabrielle, $query_textoaweb) or die( mysqli_error($gabrielle));
 $row_textoaweb =  mysqli_fetch_assoc($textoaweb);
 $totalRows_textoaweb =  mysqli_num_rows($textoaweb);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$favicon =  mysqli_query($gabrielle, $query_favicon) or die( mysqli_error($gabrielle));
 $row_favicon =  mysqli_fetch_assoc($favicon);
 $totalRows_favicon =  mysqli_num_rows($favicon);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$anagrama =  mysqli_query($gabrielle, $query_anagrama) or die( mysqli_error($gabrielle));
 $row_anagrama =  mysqli_fetch_assoc($anagrama);
 $totalRows_anagrama =  mysqli_num_rows($anagrama);
 
@@ -63,10 +63,10 @@ $varSub_articulo = "0";
 if (isset($_GET ["recordID"])) {
   $varSub_articulo = $_GET ["recordID"];
 }
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_articulo = sprintf("SELECT * FROM tblpack001articulo WHERE tblpack001articulo.intSubCategoria =%s ORDER BY tblpack001articulo.idArticulo DESC", GetSQLValueString($varSub_articulo, "int"));
 $query_limit_articulo = sprintf("%s LIMIT %d, %d", $query_articulo, $startRow_articulo, $maxRows_articulo);
-$articulo =  mysqli_query($query_limit_articulo, $gabrielle) or die( mysqli_error());
+$articulo =  mysqli_query($query_limit_articulo, $gabrielle) or die( mysqli_error($gabrielle));
 $row_articulo =  mysqli_fetch_assoc($articulo);
 
 if (isset($_GET['totalRows_articulo'])) {
@@ -77,9 +77,9 @@ if (isset($_GET['totalRows_articulo'])) {
 }
 $totalPages_articulo = ceil($totalRows_articulo/$maxRows_articulo)-1;
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_contacto = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$contacto =  mysqli_query($query_contacto, $gabrielle) or die( mysqli_error());
+$contacto =  mysqli_select_db($gabrielle, $contacto) or die( mysqli_error($gabrielle));
 $row_contacto =  mysqli_fetch_assoc($contacto);
 $totalRows_contacto =  mysqli_num_rows($contacto);
 
@@ -87,9 +87,9 @@ $varSub_articulophone = "0";
 if (isset($_GET ["recordID"])) {
   $varSub_articulophone = $_GET ["recordID"];
 }
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_articulophone = sprintf("SELECT * FROM tblpack001articulo WHERE tblpack001articulo.intSubCategoria =%s ORDER BY tblpack001articulo.idArticulo DESC", GetSQLValueString($varSub_articulophone, "int"));
-$articulophone =  mysqli_query($query_articulophone, $gabrielle) or die( mysqli_error());
+$articulophone =  mysqli_query($query_articulophone, $gabrielle) or die( mysqli_error($gabrielle));
 $row_articulophone =  mysqli_fetch_assoc($articulophone);
 $totalRows_articulophone =  mysqli_num_rows($articulophone);
 

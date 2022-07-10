@@ -80,25 +80,25 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
  mysqli_select_db($database_trebol, $trebol);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon =  mysqli_query($query_favicon, $trebol) or die( mysqli_error());
+$favicon =  mysqli_query($query_favicon, $trebol) or die( mysqli_error($gabrielle));
 $row_favicon =  mysqli_fetch_assoc($favicon);
 $totalRows_favicon =  mysqli_num_rows($favicon);
 
  mysqli_select_db($database_trebol, $trebol);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama =  mysqli_query($query_anagrama, $trebol) or die( mysqli_error());
+$anagrama =  mysqli_query($query_anagrama, $trebol) or die( mysqli_error($gabrielle));
 $row_anagrama =  mysqli_fetch_assoc($anagrama);
 $totalRows_anagrama =  mysqli_num_rows($anagrama);
 
  mysqli_select_db($database_trebol, $trebol);
 $query_datos = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$datos =  mysqli_query($query_datos, $trebol) or die( mysqli_error());
+$datos =  mysqli_query($query_datos, $trebol) or die( mysqli_error($gabrielle));
 $row_datos =  mysqli_fetch_assoc($datos);
 $totalRows_datos =  mysqli_num_rows($datos);
 
  mysqli_select_db($database_trebol, $trebol);
 $query_registros = "SELECT * FROM tblregistro ORDER BY tblregistro.idRegistro DESC";
-$registros =  mysqli_query($query_registros, $trebol) or die( mysqli_error());
+$registros =  mysqli_query($query_registros, $trebol) or die( mysqli_error($gabrielle));
 $row_registros =  mysqli_fetch_assoc($registros);
 $totalRows_registros =  mysqli_num_rows($registros);
 ?>

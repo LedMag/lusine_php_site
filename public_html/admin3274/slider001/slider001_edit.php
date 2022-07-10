@@ -91,8 +91,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
 					   GetSQLValueString($_POST['strDescripcion'], "text"),
                        GetSQLValueString($_POST['idImagen'], "int"));
 
-   mysqli_select_db($database_gabrielle, $gabrielle);
-  $Result1 =  mysqli_query($updateSQL, $gabrielle) or die( mysqli_error());
+    mysqli_select_db($gabrielle, $database_gabrielle);
+  $Result1 =  mysqli_query($updateSQL, $gabrielle) or die( mysqli_error($gabrielle));
 
   $updateGoTo = "slider001_lista.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -102,9 +102,9 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
   header(sprintf("Location: %s", $updateGoTo));
 }
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$favicon =  mysqli_query($gabrielle, $query_favicon) or die( mysqli_error($gabrielle));
 $row_favicon =  mysqli_fetch_assoc($favicon);
 $totalRows_favicon =  mysqli_num_rows($favicon);
 
@@ -112,15 +112,15 @@ $varImagen_slider = "0";
 if (isset($_GET["recordID"])) {
   $varImagen_slider = $_GET["recordID"];
 }
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_slider = sprintf("SELECT * FROM tblslider001 WHERE tblslider001.idImagen =%s", GetSQLValueString($varImagen_slider, "int"));
-$slider =  mysqli_query($query_slider, $gabrielle) or die( mysqli_error());
+$slider =  mysqli_query($query_slider, $gabrielle) or die( mysqli_error($gabrielle));
 $row_slider =  mysqli_fetch_assoc($slider);
 $totalRows_slider =  mysqli_num_rows($slider);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$anagrama =  mysqli_query($gabrielle, $query_anagrama) or die( mysqli_error($gabrielle));
 $row_anagrama =  mysqli_fetch_assoc($anagrama);
 $totalRows_anagrama =  mysqli_num_rows($anagrama);
 ?>

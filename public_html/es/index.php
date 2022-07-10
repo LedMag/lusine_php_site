@@ -32,27 +32,27 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_textoaweb = "SELECT * FROM tbltextoweb ORDER BY tbltextoweb.idTextoWeb DESC";
-$textoaweb =  mysqli_query($query_textoaweb, $gabrielle) or die( mysqli_error());
+$textoaweb =  mysqli_query($gabrielle, $query_textoaweb) or die( mysqli_error($gabrielle));
 $row_textoaweb =  mysqli_fetch_assoc($textoaweb);
 $totalRows_textoaweb =  mysqli_num_rows($textoaweb);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$favicon =  mysqli_query($gabrielle, $query_favicon) or die( mysqli_error($gabrielle));
 $row_favicon =  mysqli_fetch_assoc($favicon);
 $totalRows_favicon =  mysqli_num_rows($favicon);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$anagrama =  mysqli_query($gabrielle, $query_anagrama) or die( mysqli_error($gabrielle));
 $row_anagrama =  mysqli_fetch_assoc($anagrama);
 $totalRows_anagrama =  mysqli_num_rows($anagrama);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_seo001 = "SELECT * FROM tblseo ORDER BY tblseo.idSeo DESC";
-$seo001 =  mysqli_query($query_seo001, $gabrielle) or die( mysqli_error());
+$seo001 =  mysqli_query($gabrielle, $query_seo001) or die( mysqli_error($gabrielle));
 $row_seo001 =  mysqli_fetch_assoc($seo001);
 $totalRows_seo001 =  mysqli_num_rows($seo001);
 
@@ -63,54 +63,55 @@ if (isset($_GET['pageNum_iconosweb'])) {
 }
 $startRow_iconosweb = $pageNum_iconosweb * $maxRows_iconosweb;
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_iconosweb = "SELECT * FROM tbliconosweb ORDER BY tbliconosweb.strPosicion ASC";
 $query_limit_iconosweb = sprintf("%s LIMIT %d, %d", $query_iconosweb, $startRow_iconosweb, $maxRows_iconosweb);
-$iconosweb =  mysqli_query($query_limit_iconosweb, $gabrielle) or die( mysqli_error());
+$iconosweb =  mysqli_query($gabrielle, $query_limit_iconosweb) or die( mysqli_error($gabrielle));
 $row_iconosweb =  mysqli_fetch_assoc($iconosweb);
 
 if (isset($_GET['totalRows_iconosweb'])) {
   $totalRows_iconosweb = $_GET['totalRows_iconosweb'];
 } else {
-  $all_iconosweb =  mysqli_query($query_iconosweb);
+  $all_iconosweb =  mysqli_query($gabrielle, $query_iconosweb);
   $totalRows_iconosweb =  mysqli_num_rows($all_iconosweb);
 }
 $totalPages_iconosweb = ceil($totalRows_iconosweb/$maxRows_iconosweb)-1;
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_slider001 = "SELECT * FROM tblslider001 ORDER BY tblslider001.strPosicion ASC";
-$slider001 =  mysqli_query($query_slider001, $gabrielle) or die( mysqli_error());
+$slider001 =  mysqli_query($gabrielle, $query_slider001) or die( mysqli_error($gabrielle));
 $row_slider001 =  mysqli_fetch_assoc($slider001);
 $totalRows_slider001 =  mysqli_num_rows($slider001);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_contacto = "SELECT * FROM tbldatosempresa ORDER BY tbldatosempresa.idDatosEmpresa DESC";
-$contacto =  mysqli_query($query_contacto, $gabrielle) or die( mysqli_error());
+$contacto =  mysqli_select_db($gabrielle, $contacto) or die( mysqli_error($gabrielle));
+print_r($contacto);
 $row_contacto =  mysqli_fetch_assoc($contacto);
 $totalRows_contacto =  mysqli_num_rows($contacto);
 
-// mysqli_select_db($database_gabrielle, $gabrielle);
+//  mysqli_select_db($gabrielle, $database_gabrielle);
 //$query_pack001categorias = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.strPosicion ASC";
-//$pack001categorias =  mysqli_query($query_pack001categorias, $gabrielle) or die( mysqli_error());
+//$pack001categorias =  mysqli_query($query_pack001categorias, $gabrielle) or die( mysqli_error($gabrielle));
 //$row_pack001categorias =  mysqli_fetch_assoc($pack001categorias);
 //$totalRows_pack001categorias =  mysqli_num_rows($pack001categorias);
 
-// mysqli_select_db($database_gabrielle, $gabrielle);
+//  mysqli_select_db($gabrielle, $database_gabrielle);
 //$query_pack001categoriasphone = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.strPosicion ASC";
-//$pack001categoriasphone =  mysqli_query($query_pack001categoriasphone, $gabrielle) or die( mysqli_error());
+//$pack001categoriasphone =  mysqli_query($query_pack001categoriasphone, $gabrielle) or die( mysqli_error($gabrielle));
 //$row_pack001categoriasphone =  mysqli_fetch_assoc($pack001categoriasphone);
 //$totalRows_pack001categoriasphone =  mysqli_num_rows($pack001categoriasphone);
 
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_pack001subcategoriaver = "SELECT * FROM tblpack001subcategoria ORDER BY tblpack001subcategoria.idSubCategoria ASC";
-$pack001subcategoriaver =  mysqli_query($query_pack001subcategoriaver, $gabrielle) or die( mysqli_error());
+$pack001subcategoriaver =  mysqli_query($query_pack001subcategoriaver, $gabrielle) or die( mysqli_error($gabrielle));
 $row_pack001subcategoriaver =  mysqli_fetch_assoc($pack001subcategoriaver);
 $totalRows_pack001subcategoriaver =  mysqli_num_rows($pack001subcategoriaver);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_uno = "SELECT * FROM tblpack001subcategoria ORDER BY tblpack001subcategoria.strPosicion ASC";
-$uno =  mysqli_query($query_uno, $gabrielle) or die( mysqli_error());
+$uno =  mysqli_query($query_uno, $gabrielle) or die( mysqli_error($gabrielle));
 $row_uno =  mysqli_fetch_assoc($uno);
 $totalRows_uno =  mysqli_num_rows($uno);
 
@@ -129,10 +130,10 @@ $totalRows_uno =  mysqli_num_rows($uno);
 //}
 //$startRow_novedades = $pageNum_novedades * $maxRows_novedades;
 
-// mysqli_select_db($database_gabrielle, $gabrielle);
+//  mysqli_select_db($gabrielle, $database_gabrielle);
 //$query_novedades = "SELECT * FROM tblpack001articulo WHERE tblpack001articulo.strNovedad ='si' ORDER BY tblpack001articulo.idArticulo DESC";
 //$query_limit_novedades = sprintf("%s LIMIT %d, %d", $query_novedades, $startRow_novedades, $maxRows_novedades);
-//$novedades =  mysqli_query($query_limit_novedades, $gabrielle) or die( mysqli_error());
+//$novedades =  mysqli_query($query_limit_novedades, $gabrielle) or die( mysqli_error($gabrielle));
 //$row_novedades =  mysqli_fetch_assoc($novedades);
 
 //if (isset($_GET['totalRows_novedades'])) {
@@ -143,9 +144,9 @@ $totalRows_uno =  mysqli_num_rows($uno);
 //}
 //$totalPages_novedades = ceil($totalRows_novedades/$maxRows_novedades)-1;
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_pack001categoriasII = "SELECT * FROM tblpack001categoria ORDER BY tblpack001categoria.strPosicion ASC";
-$pack001categoriasII =  mysqli_query($query_pack001categoriasII, $gabrielle) or die( mysqli_error());
+$pack001categoriasII =  mysqli_query($query_pack001categoriasII, $gabrielle) or die( mysqli_error($gabrielle));
 $row_pack001categoriasII =  mysqli_fetch_assoc($pack001categoriasII);
 $totalRows_pack001categoriasII =  mysqli_num_rows($pack001categoriasII);
 

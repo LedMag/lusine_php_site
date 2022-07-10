@@ -77,33 +77,33 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_textos = "SELECT * FROM tbltextoweb ORDER BY tbltextoweb.idTextoWeb DESC";
-$textos =  mysqli_query($query_textos, $gabrielle) or die( mysqli_error());
+$textos =  mysqli_query($query_textos, $gabrielle) or die( mysqli_error($gabrielle));
 $row_textos =  mysqli_fetch_assoc($textos);
 $totalRows_textos =  mysqli_num_rows($textos);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_seo = "SELECT * FROM tblseo ORDER BY tblseo.idSeo DESC";
-$seo =  mysqli_query($query_seo, $gabrielle) or die( mysqli_error());
+$seo =  mysqli_query($query_seo, $gabrielle) or die( mysqli_error($gabrielle));
 $row_seo =  mysqli_fetch_assoc($seo);
 $totalRows_seo =  mysqli_num_rows($seo);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_usuarios = "SELECT * FROM tblusuario ORDER BY tblusuario.strLevel DESC";
-$usuarios =  mysqli_query($query_usuarios, $gabrielle) or die( mysqli_error());
+$usuarios =  mysqli_query($query_usuarios, $gabrielle) or die( mysqli_error($gabrielle));
 $row_usuarios =  mysqli_fetch_assoc($usuarios);
 $totalRows_usuarios =  mysqli_num_rows($usuarios);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_favicon = "SELECT * FROM tblfavicon ORDER BY tblfavicon.idFavicon ASC";
-$favicon =  mysqli_query($query_favicon, $gabrielle) or die( mysqli_error());
+$favicon =  mysqli_query($gabrielle, $query_favicon) or die( mysqli_error($gabrielle));
 $row_favicon =  mysqli_fetch_assoc($favicon);
 $totalRows_favicon =  mysqli_num_rows($favicon);
 
- mysqli_select_db($database_gabrielle, $gabrielle);
+  mysqli_select_db($gabrielle, $database_gabrielle);
 $query_anagrama = "SELECT * FROM tblanagrama ORDER BY tblanagrama.idAnagrama DESC";
-$anagrama =  mysqli_query($query_anagrama, $gabrielle) or die( mysqli_error());
+$anagrama =  mysqli_query($gabrielle, $query_anagrama) or die( mysqli_error($gabrielle));
 $row_anagrama =  mysqli_fetch_assoc($anagrama);
 $totalRows_anagrama =  mysqli_num_rows($anagrama);
 
@@ -111,9 +111,9 @@ $usuarioadmin = $_SESSION['MM_Username'];
 $url= $_SERVER['REQUEST_URI'];
 
 
- mysqli_select_db($database_gabrielle, $gabrielle); 
+  mysqli_select_db($gabrielle, $database_gabrielle); 
 $query_registro = "INSERT INTO tblregistro(strFecha, strUsuario, strContenido) VALUES (NOW(), '$usuarioadmin', '$url')";
-$registro =  mysqli_query($query_registro, $gabrielle) or die( mysqli_error());
+$registro =  mysqli_query($query_registro, $gabrielle) or die( mysqli_error($gabrielle));
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/adminewv3.dwt.php" codeOutsideHTMLIsLocked="false" -->
