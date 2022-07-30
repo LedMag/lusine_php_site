@@ -9,17 +9,17 @@ $url= $_SERVER['REQUEST_URI'];
 <?php $urldos = "/trebol/";?>
 <?php $urltres = "/bienvenido.html";?>
 <?php $urlocho = "/trebol/bienvenido.html";?>
-<?php $urlcuatro = strpos($url,'/es/');?>
-<?php $urlcinco = strpos($url,'/en/');?>
-<?php $urlseis = strpos($url,'/ru/');?>
-<?php $urlsiete = strpos($url,'/fr/');?>
+<?php $urlcuatro = strpos($url,'es/');?>
+<?php $urlcinco = strpos($url,'en/');?>
+<?php $urlseis = strpos($url,'ru/');?>
+<?php $urlsiete = strpos($url,'fr/');?>
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/es/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'es/')) { // Show if recordset not empty ?>
 
 <div class="tipografiagothicgr">
 <strong><?php echo $row_textosmedios['strAvisoEs']; ?></strong>
@@ -36,7 +36,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/en/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'en/')) { // Show if recordset not empty ?>
 
 <div class="tipografiagothicgr">
 <strong><?php echo $row_textosmedios['strAvisoEn']; ?></strong>
@@ -53,7 +53,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/ru/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'ru/')) { // Show if recordset not empty ?>
 
 <div class="tipografiagothicgr">
 <strong><?php echo $row_textosmedios['strAvisoRu']; ?></strong>
@@ -70,7 +70,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/fr/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'fr/')) { // Show if recordset not empty ?>
 
 <div class="tipografiagothicgr">
 <strong><?php echo $row_textosmedios['strAvisoFr']; ?></strong>

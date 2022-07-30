@@ -6,19 +6,19 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <?php $urluno = "/";?>
-<?php $urldos = "/gabrielle/";?>
+<?php $urldos = "gabrielle/";?>
 <?php $urltres = "/bienvenido.html";?>
 <?php $urlocho = "/gabrielle/bienvenido.html";?>
-<?php $urlcuatro = strpos($url,'/es/');?>
-<?php $urlcinco = strpos($url,'/en/');?>
-<?php $urlseis = strpos($url,'/ru/');?>
-<?php $urlsiete = strpos($url,'/fr/');?>
+<?php $urlcuatro = strpos($url,'es/');?>
+<?php $urlcinco = strpos($url,'en/');?>
+<?php $urlseis = strpos($url,'ru/');?>
+<?php $urlsiete = strpos($url,'fr/');?>
 <?php $urlweb = "http://www.abanicosluciegabrielle.com";?>
 
-<?php $urlcuatro = strpos($url,'/es/');?>
-<?php $urlcinco = strpos($url,'/en/');?>
-<?php $urlseis = strpos($url,'/ru/');?>
-<?php $urlsiete = strpos($url,'/fr/');?>
+<?php $urlcuatro = strpos($url,'es/');?>
+<?php $urlcinco = strpos($url,'en/');?>
+<?php $urlseis = strpos($url,'ru/');?>
+<?php $urlsiete = strpos($url,'fr/');?>
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
@@ -50,7 +50,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/es/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'es/')) { // Show if recordset not empty ?>
 
 <?php do { ?>
 <?php if ($row_iconosweb['strActivacion'] == "si") { // Show if recordset not empty ?>
@@ -76,7 +76,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/en/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'en/')) { // Show if recordset not empty ?>
 
 <?php do { ?>
 <?php if ($row_iconosweb['strActivacion'] == "si") { // Show if recordset not empty ?>
@@ -101,7 +101,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/ru/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'ru/')) { // Show if recordset not empty ?>
 
 <?php do { ?>
 <?php if ($row_iconosweb['strActivacion'] == "si") { // Show if recordset not empty ?>

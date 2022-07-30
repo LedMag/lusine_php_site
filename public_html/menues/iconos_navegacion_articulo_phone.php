@@ -10,14 +10,14 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <?php $urluno = "/";?>
-<?php $urldos = "/gabrielle/";?>
+<?php $urldos = "gabrielle/";?>
 <?php $urltres = "/index.php";?>
 <?php $urlcero = "/bienvenido.html";?>
 <?php $urlocho = "/gabrielle/bienvenido.html";?>
-<?php $urlcuatro = strpos($url,'/es/');?>
-<?php $urlcinco = strpos($url,'/en/');?>
-<?php $urlseis = strpos($url,'/ru/');?>
-<?php $urlsiete = strpos($url,'/fr/');?>
+<?php $urlcuatro = strpos($url,'es/');?>
+<?php $urlcinco = strpos($url,'en/');?>
+<?php $urlseis = strpos($url,'ru/');?>
+<?php $urlsiete = strpos($url,'fr/');?>
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->

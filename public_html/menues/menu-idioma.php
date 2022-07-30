@@ -10,14 +10,14 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <?php $urluno = "/";?>
-<?php $urldos = "/gabrielle/";?>
+<?php $urldos = "gabrielle/";?>
 <?php $urltres = "/index.php";?>
 <?php $urlcero = "/bienvenido.html";?>
 <?php $urlocho = "/gabrielle/bienvenido.html";?>
-<?php $urlcuatro = strpos($url,'/es/');?>
-<?php $urlcinco = strpos($url,'/en/');?>
-<?php $urlseis = strpos($url,'/ru/');?>
-<?php $urlsiete = strpos($url,'/fr/');?>
+<?php $urlcuatro = strpos($url,'es/');?>
+<?php $urlcinco = strpos($url,'en/');?>
+<?php $urlseis = strpos($url,'ru/');?>
+<?php $urlsiete = strpos($url,'fr/');?>
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
@@ -36,7 +36,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/es/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'es/')) { // Show if recordset not empty ?>
 <div class="menuidiomas">
 <a href="bienvenido.html" title="castellano"><img src="../gif/template/es.jpg" width="10%" /></a> &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="../en/welcome.html" title="inglés"><img src="../gif/template/en.jpg" width="10%" /></a> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -48,7 +48,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/en/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'en/')) { // Show if recordset not empty ?>
 <div class="menuidiomas">
 <a href="../es/bienvenido.html" title="castellano"><img src="../gif/template/es.jpg" width="10%" /></a> &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="welcome.html" title="inglés"><img src="../gif/template/en.jpg" width="10%" /></a> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -61,7 +61,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/ru/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'ru/')) { // Show if recordset not empty ?>
 <div class="menuidiomas">
 <a href="../es/bienvenido.html" title="castellano"><img src="../gif/template/es.jpg" width="10%" /></a> &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="../en/welcome.html" title="inglés"><img src="../gif/template/en.jpg" width="10%" /></a> &nbsp;&nbsp;&nbsp;&nbsp;

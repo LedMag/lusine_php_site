@@ -10,14 +10,14 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <?php $urluno = "/";?>
-<?php $urldos = "/gabrielle/";?>
+<?php $urldos = "gabrielle/";?>
 <?php $urltres = "/index.php";?>
 <?php $urlcero = "/bienvenido.html";?>
 <?php $urlocho = "/gabrielle/bienvenido.html";?>
-<?php $urlcuatro = strpos($url,'/es/');?>
-<?php $urlcinco = strpos($url,'/en/');?>
-<?php $urlseis = strpos($url,'/ru/');?>
-<?php $urlsiete = strpos($url,'/fr/');?>
+<?php $urlcuatro = strpos($url,'es/');?>
+<?php $urlcinco = strpos($url,'en/');?>
+<?php $urlseis = strpos($url,'ru/');?>
+<?php $urlsiete = strpos($url,'fr/');?>
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
@@ -34,7 +34,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/es/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'es/')) { // Show if recordset not empty ?>
 
 <div class="ocultarphone">
 <table width="100%" border="0" align="center">
@@ -133,7 +133,7 @@ return $insertar_ceros .= $numero;
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/en/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'en/')) { // Show if recordset not empty ?>
 
 <div class="ocultarphone">
 <table width="100%" border="0" align="center">
@@ -225,7 +225,7 @@ return $insertar_ceros .= $numero;
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
 <!--****************************************************************************************-->
-<?php if (false !== strpos($url,'/ru/')) { // Show if recordset not empty ?>
+<?php if (false !== strpos($url,'ru/')) { // Show if recordset not empty ?>
 
 <div class="ocultarphone">
 <table width="100%" border="0" align="center">
