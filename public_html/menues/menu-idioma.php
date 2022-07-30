@@ -65,7 +65,7 @@ $url= $_SERVER['REQUEST_URI'];
 <div class="menuidiomas">
 <a href="../es/bienvenido.html" title="castellano"><img src="../gif/template/es.jpg" width="10%" /></a> &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="../en/welcome.html" title="inglés"><img src="../gif/template/en.jpg" width="10%" /></a> &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="добро-пожаловать.html" title="ruso"><img src="../gif/template/ru.jpg" width="10%" /></a> &nbsp;&nbsp;&nbsp;&nbsp;
+<a href="добро-пожаловать.html" title="ruso"><img src="../gif/template/ru.jpg" width="10%" /></a>
 </div>
 <?php } // Show if recordset not empty ?>
 <!--****************************************************************************************-->

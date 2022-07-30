@@ -34,6 +34,7 @@ $url= $_SERVER['REQUEST_URI'];
 <td align="right" class="menuhorizontal0001">
 <!--****************************************************************************************-->
 <a href="es/bienvenido.html"><?php echo $row_textoaweb['strTexto1']; ?></a>&nbsp;&nbsp;
+<a href="es/contacts.html"><?php echo $row_textoaweb['strTexto1']; ?></a>&nbsp;&nbsp;
 
 <!--****************************************************************************************-->
 </td>
@@ -55,6 +56,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 
 <a href="../es/bienvenido.html"><?php echo $row_textoaweb['strTexto1']; ?></a>&nbsp;&nbsp;
+<a href="../es/contacts.html"><?php echo $row_textoaweb['strTexto1']; ?></a>&nbsp;&nbsp;
 
 
 <!--****************************************************************************************-->
@@ -77,6 +79,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 
 <a href="../en/welcome.html"><?php echo $row_textoaweb['strTexto1En']; ?></a>&nbsp;&nbsp;
+<a href="../en/contacts.html"><?php echo $row_textoaweb['strTexto1']; ?></a>&nbsp;&nbsp;
 
 
 <!--****************************************************************************************-->
@@ -99,6 +102,7 @@ $url= $_SERVER['REQUEST_URI'];
 <!--****************************************************************************************-->
 
 <a href="../en/welcome.html"><?php echo $row_textoaweb['strTexto1Ru']; ?></a>&nbsp;&nbsp;
+<a href="../en/contacts.html"><?php echo $row_textoaweb['strTexto1']; ?></a>&nbsp;&nbsp;
 
 
 <!--****************************************************************************************-->
